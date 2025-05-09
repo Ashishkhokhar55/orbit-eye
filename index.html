@@ -1,122 +1,45 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  RocketIcon,
-  CameraIcon,
-  BuildingIcon,
-  MailIcon,
-  ImageIcon,
-} from "lucide-react";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.2, duration: 0.6 },
-  }),
-};
-
-export default function OrbitEyeHomePage() {
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#73A9C2] text-[#1e1e1e] px-6 py-10">
-      <motion.header
-        className="text-center mb-16"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-        custom={0}
-      >
-        <h1 className="text-5xl font-bold mb-4 text-[#D1CBC1] drop-shadow-md">
-          Orbit Eye
-        </h1>
-        <p className="text-lg text-white font-medium">
-          Capturing Your World from Above – Drone Cinematics & Digital Marketing
-          for Real Estate and Weddings
-        </p>
-        <Button className="mt-6 bg-[#D1CBC1] text-black hover:bg-[#c5beb4] transition">
-          Get a Quote
-        </Button>
-      </motion.header>
+    <div className="min-h-screen bg-gradient-to-b from-[#c9d6ff] to-[#e2e2e2] text-gray-800 font-sans">
+      {/* Navbar */}
+      <nav className="bg-white shadow-md py-4 px-8 flex justify-between items-center sticky top-0 z-50">
+        <h1 className="text-2xl font-bold text-[#4a6fa5]">Orbit Eye</h1>
+        <ul className="flex space-x-6 text-gray-700 font-medium">
+          <li><a href="#home" className="hover:text-[#4a6fa5]">Home</a></li>
+          <li><a href="#services" className="hover:text-[#4a6fa5]">Services</a></li>
+          <li><a href="#gallery" className="hover:text-[#4a6fa5]">Gallery</a></li>
+          <li><a href="#about" className="hover:text-[#4a6fa5]">About</a></li>
+          <li><a href="#contact" className="hover:text-[#4a6fa5]">Contact</a></li>
+        </ul>
+        <Button className="bg-[#a8b0ae] text-white hover:bg-[#8e9996] rounded-xl">Get Quote</Button>
+      </nav>
 
-      <motion.section
-        className="mb-20"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-        custom={1}
-      >
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">
-          Our Services
+      {/* Hero Section */}
+      <section id="home" className="text-center py-20 px-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#4a6fa5] mb-4">
+          Elevate Your View with Drone Excellence
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[{
-            Icon: CameraIcon,
-            title: "Wedding Drone Shoots",
-            details: `Silver: ₹8,000 – 1 hr shoot, 1 location, 2 drone clips\nGold: ₹15,000 – 2 hr shoot, 4 clips, teaser\nPlatinum: ₹25,000+ – Full day, edited highlights & teaser`
-          }, {
-            Icon: BuildingIcon,
-            title: "Real Estate Visuals",
-            details: `Starter: ₹5,000 – 30 min aerial shoot\nStandard: ₹10,000 – 1 hr shoot, 60-sec edited\nPro: ₹18–22k – Full interior + exterior package`
-          }, {
-            Icon: RocketIcon,
-            title: "Digital Growth Solutions",
-            details: `SEO, Google My Business, Social Ads, Content Writing, and Video Editing services tailored to elevate your brand.`
-          }].map(({ Icon, title, details }, i) => (
-            <motion.div key={title} variants={fadeIn} custom={i + 2} initial="hidden" animate="visible">
-              <Card className="bg-white border-[#D1CBC1] shadow-lg hover:shadow-xl transition duration-300">
-                <CardContent className="p-6">
-                  <Icon className="text-[#73A9C2] mb-4" size={40} />
-                  <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                  <p className="text-gray-700 whitespace-pre-line">{details}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <p className="text-lg max-w-2xl mx-auto text-gray-600 mb-6">
+          Orbit Eye specializes in premium drone rental services for real estate, weddings, and cinematic productions.
+        </p>
+        <div className="flex justify-center gap-4">
+          <Button className="bg-[#4a6fa5] text-white hover:bg-[#3d5c99] px-6 py-3 rounded-xl">Explore Services</Button>
+          <Button className="bg-[#a8b0ae] text-white hover:bg-[#8e9996] px-6 py-3 rounded-xl">Book Now</Button>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section
-        className="mb-20 text-center text-white"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-        custom={5}
-      >
-        <h2 className="text-3xl font-bold mb-8">Portfolio</h2>
-        <p>Our Eye in the Sky – Visual Stories We’ve Told</p>
-        <ImageIcon className="mx-auto mt-4 text-[#D1CBC1]" size={50} />
-        <p className="mt-2">(Gallery section coming soon)</p>
-      </motion.section>
+      {/* Placeholder for Image/Video Banner */}
+      <section className="w-full h-[400px] bg-gray-300 flex items-center justify-center">
+        <p className="text-gray-500">[ Image/Video Banner Placeholder ]</p>
+      </section>
 
-      <motion.section
-        className="mb-20 text-center"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-        custom={6}
-      >
-        <h2 className="text-3xl font-bold text-white mb-8">Contact Us</h2>
-        <MailIcon className="mx-auto mb-2 text-[#D1CBC1]" size={40} />
-        <p className="text-white mb-2">Email: Ashish.khokhar.kumar55@gmail.com</p>
-        <p className="text-white mb-4">Phone: +91 7217676818</p>
-        <Button className="bg-[#D1CBC1] text-black hover:bg-[#c5beb4] transition">
-          Send a Message
-        </Button>
-      </motion.section>
-
-      <motion.footer
-        className="text-center text-white mt-10 text-sm"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-        custom={7}
-      >
-        <p>© 2025 Orbit Eye. Crafted for clarity, captured with care.</p>
-      </motion.footer>
+      {/* Footer */}
+      <footer className="bg-white text-center text-sm py-6 mt-12 shadow-inner">
+        <p className="text-gray-500">© 2025 Orbit Eye. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
-
