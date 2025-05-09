@@ -1,99 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orbit Eye – Drone Excellence in Real Estate & Weddings</title>
-  <meta name="description" content="Orbit Eye offers professional drone services for real estate and wedding events. Book stunning aerial shots with us.">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .bg-gradient {
-      background: linear-gradient(to right, #1e3a8a, #1e40af); /* blue shades */
-    }
-  </style>
-</head>
-<body class="bg-blue-950 text-white">
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  RocketIcon,
+  CameraIcon,
+  BuildingIcon,
+  MailIcon,
+  ImageIcon,
+} from "lucide-react";
 
-  <!-- Header -->
-  <header class="bg-gradient p-6 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-yellow-400">Orbit Eye</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="text-yellow-300 font-semibold underline">Home</a>
-        <a href="services.html" class="text-yellow-300 hover:underline">Services</a>
-        <a href="gallery.html" class="text-yellow-300 hover:underline">Gallery</a>
-        <a href="about.html" class="text-yellow-300 hover:underline">About</a>
-        <a href="#contact" class="text-yellow-300 hover:underline">Contact</a>
-      </nav>
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
+
+export default function OrbitEyeHomePage() {
+  return (
+    <div className="min-h-screen bg-[#73A9C2] text-[#1e1e1e] px-6 py-10">
+      <motion.header
+        className="text-center mb-16"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        custom={0}
+      >
+        <h1 className="text-5xl font-bold mb-4 text-[#D1CBC1] drop-shadow-md">
+          Orbit Eye
+        </h1>
+        <p className="text-lg text-white font-medium">
+          Capturing Your World from Above – Drone Cinematics & Digital Marketing
+          for Real Estate and Weddings
+        </p>
+        <Button className="mt-6 bg-[#D1CBC1] text-black hover:bg-[#c5beb4] transition">
+          Get a Quote
+        </Button>
+      </motion.header>
+
+      <motion.section
+        className="mb-20"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        custom={1}
+      >
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">
+          Our Services
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[{
+            Icon: CameraIcon,
+            title: "Wedding Drone Shoots",
+            details: `Silver: ₹8,000 – 1 hr shoot, 1 location, 2 drone clips\nGold: ₹15,000 – 2 hr shoot, 4 clips, teaser\nPlatinum: ₹25,000+ – Full day, edited highlights & teaser`
+          }, {
+            Icon: BuildingIcon,
+            title: "Real Estate Visuals",
+            details: `Starter: ₹5,000 – 30 min aerial shoot\nStandard: ₹10,000 – 1 hr shoot, 60-sec edited\nPro: ₹18–22k – Full interior + exterior package`
+          }, {
+            Icon: RocketIcon,
+            title: "Digital Growth Solutions",
+            details: `SEO, Google My Business, Social Ads, Content Writing, and Video Editing services tailored to elevate your brand.`
+          }].map(({ Icon, title, details }, i) => (
+            <motion.div key={title} variants={fadeIn} custom={i + 2} initial="hidden" animate="visible">
+              <Card className="bg-white border-[#D1CBC1] shadow-lg hover:shadow-xl transition duration-300">
+                <CardContent className="p-6">
+                  <Icon className="text-[#73A9C2] mb-4" size={40} />
+                  <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                  <p className="text-gray-700 whitespace-pre-line">{details}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="mb-20 text-center text-white"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        custom={5}
+      >
+        <h2 className="text-3xl font-bold mb-8">Portfolio</h2>
+        <p>Our Eye in the Sky – Visual Stories We’ve Told</p>
+        <ImageIcon className="mx-auto mt-4 text-[#D1CBC1]" size={50} />
+        <p className="mt-2">(Gallery section coming soon)</p>
+      </motion.section>
+
+      <motion.section
+        className="mb-20 text-center"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        custom={6}
+      >
+        <h2 className="text-3xl font-bold text-white mb-8">Contact Us</h2>
+        <MailIcon className="mx-auto mb-2 text-[#D1CBC1]" size={40} />
+        <p className="text-white mb-2">Email: orbiteye.services@gmail.com</p>
+        <p className="text-white mb-4">Phone: +91 98765 43210</p>
+        <Button className="bg-[#D1CBC1] text-black hover:bg-[#c5beb4] transition">
+          Send a Message
+        </Button>
+      </motion.section>
+
+      <motion.footer
+        className="text-center text-white mt-10 text-sm"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        custom={7}
+      >
+        <p>© 2025 Orbit Eye. Crafted for clarity, captured with care.</p>
+      </motion.footer>
     </div>
-  </header>
+  );
+}
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-blue-900">
-    <h2 class="text-4xl font-bold text-yellow-300 mb-4">Elevate Your Story</h2>
-    <p class="text-lg text-gray-300 mb-6">Professional Drone Services for Real Estate & Weddings</p>
-    <a href="services.html" class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition">
-      View Packages
-    </a>
-  </section>
-
-  <!-- Services Overview -->
-  <section class="py-16 px-6 max-w-6xl mx-auto">
-    <h3 class="text-2xl font-bold text-yellow-300 mb-6 text-center">Our Drone Services</h3>
-    <div class="grid md:grid-cols-2 gap-8 text-center">
-      <div class="bg-blue-800 p-6 rounded-lg shadow-lg">
-        <h4 class="text-xl text-yellow-300 font-semibold mb-2">Real Estate</h4>
-        <p class="text-gray-200">Capture stunning property visuals that sell. HD aerial photos, 4K walkthroughs, and mapping.</p>
-      </div>
-      <div class="bg-blue-800 p-6 rounded-lg shadow-lg">
-        <h4 class="text-xl text-yellow-300 font-semibold mb-2">Weddings</h4>
-        <p class="text-gray-200">Turn your big day into a cinematic memory. Drone shots that make your wedding unforgettable.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Preview -->
-  <section class="bg-blue-900 py-16 px-6 text-center">
-    <h3 class="text-2xl font-bold text-yellow-300 mb-4">Our Work</h3>
-    <p class="text-gray-300 mb-6">A glimpse into what we do best — aerial brilliance.</p>
-    <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-      <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow-md" alt="Gallery shot 1">
-      <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow-md" alt="Gallery shot 2">
-      <img src="https://via.placeholder.com/300x200" class="rounded-lg shadow-md" alt="Gallery shot 3">
-    </div>
-    <a href="gallery.html" class="mt-6 inline-block text-yellow-400 font-semibold hover:underline">View Full Gallery</a>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-16 px-6 bg-blue-800 text-center">
-    <h3 class="text-2xl font-bold text-yellow-300 mb-4">What Clients Say</h3>
-    <div class="max-w-4xl mx-auto space-y-6">
-      <blockquote class="text-gray-100 italic">"Orbit Eye made our wedding feel like a movie. The drone footage blew everyone away!" – Riya & Akash</blockquote>
-      <blockquote class="text-gray-100 italic">"My real estate listings never looked better. I sold two properties the first week!" – Mohit, Realtor</blockquote>
-    </div>
-  </section>
-
-  <!-- Contact Form -->
-  <section id="contact" class="bg-blue-900 py-16 px-6 text-center">
-    <h3 class="text-2xl font-bold text-yellow-300 mb-4">Get in Touch</h3>
-    <p class="text-gray-300 mb-6">Need a quote or want to discuss your next project? We’re just a message away.</p>
-    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="max-w-lg mx-auto">
-      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 mb-4 rounded bg-white text-black" required />
-      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded bg-white text-black" required />
-      <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-3 mb-4 rounded bg-white text-black" required></textarea>
-      <button type="submit" class="bg-yellow-400 text-blue-900 font-semibold px-6 py-2 rounded hover:bg-yellow-300 transition">
-        Send Message
-      </button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-950 text-center text-sm text-gray-400 p-6">
-    © 2025 Orbit Eye | Drone Aerial Solutions. Powered by Precision & Passion.
-  </footer>
-
-</body>
-</html>
