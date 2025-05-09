@@ -110,6 +110,19 @@
       color: #003366;
       font-weight: bold;
     }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
@@ -137,14 +150,14 @@
   </section>
 
   <div style="text-align: center; margin: 40px 0;">
-    <img src="https://images.pexels.com/photos/14396183/pexels-photo-14396183.jpeg" alt="Drone flying over a hand" style="max-width: 100%; height: auto; border-radius: 12px;">
-    <div class="image-caption">Drone Flying Over a Hand - Orbit Eye</div>
+    <img src="https://images.pexels.com/photos/1446446/pexels-photo-1446446.jpeg" alt="Drone flying in the sky" style="max-width: 100%; height: auto; border-radius: 12px;">
+    <div class="image-caption">Drone Flying in the Sky - Orbit Eye</div>
   </div>
 
   <section id="services">
     <h2>Our Services</h2>
     <div class="service-box">
-      <h3>Real Estate Package – ₹7,500 (Per Shoot) / ₹25,000 (Monthly)</h3>
+      <h3>Real Estate Package – ₹7,000 (Per Shoot) / ₹22,000 (Monthly)</h3>
       <ul>
         <li>Up to 2 hours of aerial drone photography and videography</li>
         <li>10 professionally retouched photos</li>
@@ -153,7 +166,7 @@
       </ul>
     </div>
     <div class="service-box">
-      <h3>Event Package – ₹12,000 (Per Day)</h3>
+      <h3>Event Package – ₹10,000 (Per Day)</h3>
       <ul>
         <li>Coverage for family parties, kitty parties, and special occasions</li>
         <li>Up to 4 hours of aerial drone coverage</li>
@@ -163,7 +176,7 @@
       </ul>
     </div>
     <div class="service-box">
-      <h3>Custom Package – Starting at ₹18,000 (Per Hour / Per Project)</h3>
+      <h3>Custom Package – Starting at ₹15,000 (Per Project)</h3>
       <ul>
         <li>Tailored solutions for unique events or projects</li>
         <li>Flexible flight time and coverage</li>
@@ -179,53 +192,23 @@
   </section>
 
   <section class="faq hidden-section">
-    <h2>Find It Fast</h2>
-    <h3>What is real estate drone photography?</h3>
-    <p>Drone photography in real estate requires unmanned aerial vehicles equipped with high-resolution cameras to capture aerial images and videos of properties, offering comprehensive and engaging visuals.</p>
-
-    <h3>Why you should use real estate drone photography</h3>
-    <p>Drones offer enhanced property visualization, competitive marketing advantages, and increased online engagement through striking aerial perspectives that appeal to potential buyers.</p>
-
-    <h3>Getting started with drone photography</h3>
-    <p>To start, consider licensing requirements, drone types, and pricing. Choose a drone based on your needs and comply with all aviation regulations if flying commercially.</p>
-
-    <h3>Hiring a professional drone operator</h3>
-    <p>Look for certified, insured professionals with quality equipment and a strong portfolio. Discuss pricing, deliverables, and revision policies before hiring.</p>
-
-    <h3>Top tips for real estate drone photography</h3>
-    <p>Plan your shots, use ideal lighting, follow a stable flight path, ensure legal compliance, adjust camera settings, and enhance media with post-processing.</p>
-
-    <h3>How Luxury Presence uses drone photography and videography</h3>
-    <p>Luxury Presence integrates drone visuals into websites and listings to create immersive property presentations, strengthening agent branding and property appeal.</p>
-
-    <h3>Real estate property marketing + Luxury Presence</h3>
-    <p>Combining drone photography with ground visuals helps real estate marketers craft a compelling narrative, increasing buyer interest and property value perception.</p>
+    ...
   </section>
 
   <section id="contact" class="contact">
-    <h2>Get in Touch</h2>
-    <p>For quotes, inquiries, or more information, please fill out the form below.</p>
-    <form>
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name"><br><br>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email"><br><br>
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-      <label for="service">Service Type:</label><br>
-      <select id="service" name="service">
-        <option value="real_estate">Real Estate</option>
-        <option value="event">Family / Kitty Party</option>
-        <option value="custom">Custom</option>
-      </select><br><br>
-      <button type="submit">Request for Quote</button>
+    <h2>Contact Us</h2>
+    <form action="mailto:ashish.khokhar.kumar55@gmail.com" method="POST" enctype="text/plain">
+      <label>Name:</label><br>
+      <input type="text" name="name" required><br><br>
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br><br>
+      <label>Message:</label><br>
+      <textarea name="message" rows="5" required></textarea><br><br>
+      <input type="submit" value="Submit">
     </form>
-    <div class="social-links">
-      <p>Follow us on:</p>
-      <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/@yourchannel" target="_blank">YouTube</a>
-    </div>
   </section>
+
+  <a href="https://wa.me/917217676818" class="whatsapp-button" target="_blank">Chat on WhatsApp</a>
 
   <footer>
     <p>© 2025 Orbit Eye. All Rights Reserved.</p>
