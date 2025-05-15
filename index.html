@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orbit Eye | Drone Photography & Videography</title>
   <meta name="description" content="Orbit Eye offers professional drone photography and videography services for real estate, weddings, and special events across India. Certified drone pilots. Stunning aerial visuals." />
   <meta name="keywords" content="drone photography India, real estate aerial shots, wedding drone video, Orbit Eye, drone services, aerial videography, cinematic drone" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://orbiteye.in.xyz/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
       background-color: #ffffff;
@@ -22,24 +25,8 @@
       scroll-behavior: smooth;
     }
     /* Header and Navigation */
-    header {
-      background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: white;
-      padding: 40px 20px 80px 20px;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0 0 10px 0;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0;
-      margin-bottom: 30px;
-    }
     nav {
-      background: rgba(0, 39, 77, 0.85);
+      background: rgba(0, 39, 77, 0.95);
       position: fixed;
       top: 0;
       left: 0;
@@ -47,12 +34,13 @@
       z-index: 1000;
       display: flex;
       justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      padding: 10px 0;
     }
     nav ul {
       list-style: none;
       margin: 0;
-      padding: 10px 0;
+      padding: 0;
       display: flex;
       gap: 40px;
     }
@@ -67,23 +55,54 @@
       padding: 6px 10px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
+      cursor: pointer;
     }
-    nav ul li a:hover {
+    nav ul li a:hover,
+    nav ul li a.active {
       background-color: #fdd835;
       color: #00274d;
     }
-    /* Sections inside header */
-    #about-us, #services, #contact-us {
-      background: rgba(255, 255, 255, 0.9);
+    header {
+      background: url("https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1600&q=80")
+        no-repeat center center/cover;
+      color: white;
+      padding: 80px 20px 40px 20px;
+      text-align: center;
+      position: relative;
+      margin-top: 56px; /* offset nav height */
+      min-height: 420px; /* reserve space */
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0 0 10px 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    /* Sections inside header - all hidden except active */
+    #about-us,
+    #services,
+    #contact-us {
+      background: rgba(255, 255, 255, 0.95);
       color: #00274d;
       margin: 20px auto 0 auto;
       padding: 20px 30px;
       border-radius: 10px;
       max-width: 900px;
       text-align: left;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      display: none;
     }
-    #about-us h2, #services h2, #contact-us h2 {
+    #about-us.active,
+    #services.active,
+    #contact-us.active {
+      display: block;
+    }
+    #about-us h2,
+    #services h2,
+    #contact-us h2 {
       color: #00274d;
       margin-top: 0;
       font-size: 2rem;
@@ -91,11 +110,14 @@
       padding-bottom: 8px;
       margin-bottom: 15px;
     }
-    #about-us h3, #services h4 {
+    #about-us h3,
+    #services h4 {
       margin: 15px 0 8px;
       color: #004080;
     }
-    #about-us p, #services p, #contact-us p {
+    #about-us p,
+    #services p,
+    #contact-us p {
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 12px;
@@ -105,7 +127,7 @@
       padding: 15px 20px;
       border-radius: 8px;
       margin-bottom: 20px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
     }
     /* Rest of the page content */
     main {
@@ -117,7 +139,7 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       margin: 40px 0;
     }
     .testimonial {
@@ -151,7 +173,7 @@
       text-align: center;
       font-size: 30px;
       z-index: 10000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     .whatsapp-float i {
       margin-top: 15px;
@@ -164,23 +186,14 @@
     a.contact-link:hover {
       text-decoration: underline;
     }
-    /* To offset the fixed nav when scrolling to anchors */
-    section:target::before {
-      content: "";
-      display: block;
-      height: 60px;
-      margin-top: -60px;
-      visibility: hidden;
-    }
   </style>
 </head>
 <body>
-
   <nav>
     <ul>
-      <li><a href="#about-us">About Us</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact-us">Contact Us</a></li>
+      <li><a href="#about-us" class="nav-link active">About Us</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#contact-us" class="nav-link">Contact Us</a></li>
     </ul>
   </nav>
 
@@ -188,36 +201,71 @@
     <h1>Orbit Eye</h1>
     <p>Professional Drone Photography & Videography</p>
 
-    <!-- About Us Section (FAQ) inside header -->
-    <section id="about-us" aria-label="About Us and FAQ">
+    <!-- About Us Section -->
+    <section id="about-us" class="active" aria-label="About Us and FAQ">
       <h2>About Us</h2>
 
       <h3>1. Who Are We?</h3>
-      <p>We are a group of passionate aerial filmmakers and certified drone professionals dedicated to providing cinematic drone content for a variety of industries and personal needs.</p>
+      <p>
+        We are a group of passionate aerial filmmakers and certified drone
+        professionals dedicated to providing cinematic drone content for a
+        variety of industries and personal needs.
+      </p>
 
       <h3>2. How Can We Help in Real Estate?</h3>
-      <p>We help real estate professionals enhance their listings with high-quality aerial photography and videos that give buyers a broader view of the property’s size, neighborhood, and landscape.</p>
+      <p>
+        We help real estate professionals enhance their listings with
+        high-quality aerial photography and videos that give buyers a broader
+        view of the property’s size, neighborhood, and landscape.
+      </p>
 
       <h3>3. What Services Do We Offer?</h3>
-      <p>We provide aerial photography, cinematic drone videos, real estate virtual tours, wedding drone coverage, event flyovers, and custom drone shooting projects.</p>
+      <p>
+        We provide aerial photography, cinematic drone videos, real estate
+        virtual tours, wedding drone coverage, event flyovers, and custom drone
+        shooting projects.
+      </p>
 
       <h3>4. Why Choose Orbit Eye?</h3>
-      <p>We focus on creative visuals, technical precision, safety, and timely delivery — offering clients exceptional service every time.</p>
+      <p>
+        We focus on creative visuals, technical precision, safety, and timely
+        delivery — offering clients exceptional service every time.
+      </p>
 
       <h3>5. What Makes Us Different?</h3>
-      <p>We use cutting-edge drone technology and cinematic storytelling to bring out the beauty and uniqueness of each project.</p>
+      <p>
+        We use cutting-edge drone technology and cinematic storytelling to
+        bring out the beauty and uniqueness of each project.
+      </p>
 
       <h3>6. Where Do We Operate?</h3>
-      <p>We are based in India and operate across metro cities and tier-2 towns, delivering flexible service nationwide.</p>
+      <p>
+        We are based in India and operate across metro cities and tier-2 towns,
+        delivering flexible service nationwide.
+      </p>
 
       <h3>7. How to Book Our Services?</h3>
-      <p>Contact us via WhatsApp <a class="contact-link" href="https://wa.me/917217676818" target="_blank">+91 72176 76818</a>, email <a class="contact-link" href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a>, or fill out our inquiry form for a quote.</p>
+      <p>
+        Contact us via WhatsApp
+        <a
+          class="contact-link"
+          href="https://wa.me/917217676818"
+          target="_blank"
+          >+91 72176 76818</a
+        >,
+        email
+        <a
+          class="contact-link"
+          href="mailto:ashish.khokhar.kumar55@gmail.com"
+          >ashish.khokhar.kumar55@gmail.com</a
+        >, or fill out our inquiry form for a quote.
+      </p>
 
       <h3>8. What Are Our Pricing Packages?</h3>
       <p>Our services are tailored to client requirements. See Services section below for details.</p>
     </section>
 
-    <!-- Services Section inside header -->
+    <!-- Services Section -->
     <section id="services" aria-label="Service Packages and Pricing">
       <h2>Service Packages & Pricing</h2>
 
@@ -240,29 +288,79 @@
       </div>
     </section>
 
-    <!-- Contact Us Section inside header -->
+    <!-- Contact Us Section -->
     <section id="contact-us" aria-label="Contact Details">
       <h2>Contact Us</h2>
-      <p>Email: <a class="contact-link" href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
-      <p>Phone: <a class="contact-link" href="tel:+917217676818">+91 72176 76818</a></p>
-      <p>Follow us: 
-        <a class="contact-link" href="https://instagram.com/orbiteye" target="_blank" rel="noopener noreferrer">Instagram</a> | 
-        <a class="contact-link" href="https://facebook.com/orbiteye" target="_blank" rel="noopener noreferrer">Facebook</a> | 
-        <a class="contact-link" href="https://youtube.com/orbiteye" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <p>
+        Email:
+        <a
+          class="contact-link"
+          href="mailto:ashish.khokhar.kumar55@gmail.com"
+          >ashish.khokhar.kumar55@gmail.com</a
+        >
+      </p>
+      <p>
+        Phone:
+        <a class="contact-link" href="tel:+917217676818">+91 72176 76818</a>
+      </p>
+      <p>
+        Follow us:
+        <a
+          class="contact-link"
+          href="https://instagram.com/orbiteye"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram</a
+        >
+        |
+        <a
+          class="contact-link"
+          href="https://facebook.com/orbiteye"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Facebook</a
+        >
+        |
+        <a
+          class="contact-link"
+          href="https://youtube.com/orbiteye"
+          target="_blank"
+          rel="noopener noreferrer"
+          >YouTube</a
+        >
       </p>
     </section>
   </header>
 
   <main>
     <section>
-      <img class="hero-image" src="https://images.unsplash.com/photo-1600971312647-00d18ef5f5a1?auto=format&fit=crop&w=1200&q=80" alt="Featured drone shot" />
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1600971312647-00d18ef5f5a1?auto=format&fit=crop&w=1200&q=80"
+        alt="Featured drone shot"
+      />
     </section>
 
     <section class="testimonial" aria-label="Client Testimonials">
       <h2>Client Testimonials</h2>
-      <p><em>"Orbit Eye captured our wedding beautifully. The drone shots added a magical touch." — Rohan & Simran</em></p>
-      <p><em>"Their real estate drone photography helped us sell properties faster." — Mehta Realtors</em></p>
-      <p><em>"Professional, punctual, and creative. Orbit Eye exceeded our expectations." — Ananya Sharma</em></p>
+      <p>
+        <em>
+          "Orbit Eye captured our wedding beautifully. The drone shots added a
+          magical touch." — Rohan & Simran
+        </em>
+      </p>
+      <p>
+        <em>
+          "Their real estate drone photography helped us sell properties
+          faster." — Mehta Realtors
+        </em>
+      </p>
+      <p>
+        <em>
+          "Professional, punctual, and creative. Orbit Eye exceeded our
+          expectations." — Ananya Sharma
+        </em>
+      </p>
     </section>
   </main>
 
@@ -270,9 +368,41 @@
     <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
   </footer>
 
-  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <a
+    href="https://wa.me/917217676818"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+  >
     <i class="fab fa-whatsapp"></i>
   </a>
 
-</body>
-</html>
+  <script>
+    // Handle section toggling on nav click
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const sections = document.querySelectorAll("header section");
+
+    function showSection(id) {
+      sections.forEach((section) => {
+        if (section.id === id) {
+          section.classList.add("active");
+        } else {
+          section.classList.remove("active");
+        }
+      });
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        showSection(targetId);
+
+        // Highlight active link
+        navLinks.forEach((l)
+
+
+
+
+
+
