@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orbit Eye - Drone Rental & Video Marketing</title>
+  <title>Orbit Eye - Home</title>
   <style>
-    /* Reset & basics */
+    /* Common styles for all pages */
     * {
       box-sizing: border-box;
       margin: 0; padding: 0;
@@ -49,7 +49,6 @@
       color: #004aad;
     }
 
-    /* Container */
     .container {
       width: 90%;
       max-width: 1200px;
@@ -140,172 +139,6 @@
       border-radius: 40px;
     }
 
-    /* Section Titles */
-    h2.section-title {
-      color: #004aad;
-      text-align: center;
-      font-size: 2.5rem;
-      margin: 60px 0 30px;
-      font-weight: 700;
-    }
-    p.section-subtitle {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 40px;
-      font-size: 1.1rem;
-      color: #444;
-    }
-
-    /* About Section */
-    #about {
-      padding: 50px 20px;
-      background: #f5f7fb;
-    }
-    #about .content {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    #about .content p {
-      font-size: 1.15rem;
-      color: #333;
-      line-height: 1.7;
-      margin-top: 1rem;
-    }
-
-    /* Services Section */
-    #services {
-      padding: 50px 20px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .service-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 25px;
-      background: white;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
-      transition: transform 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
-    }
-    .service-card h3 {
-      color: #004aad;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-    .service-card p {
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Career Section */
-    #career {
-      background: #f5f7fb;
-      padding: 50px 20px;
-    }
-    #career .container {
-      max-width: 700px;
-      margin: auto;
-    }
-    #career h2 {
-      margin-bottom: 15px;
-    }
-    #career p {
-      color: #333;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    #career form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    #career label {
-      font-weight: 600;
-      color: #004aad;
-    }
-    #career select,
-    #career input[type="text"],
-    #career input[type="email"],
-    #career input[type="file"] {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      width: 100%;
-    }
-    #career button {
-      align-self: flex-start;
-      background: #004aad;
-      color: white;
-      border-radius: 25px;
-      padding: 12px 30px;
-      font-weight: 700;
-      transition: background 0.3s ease;
-    }
-    #career button:hover {
-      background: #ffd500;
-      color: #004aad;
-    }
-
-    /* Contact Section */
-    #contact {
-      padding: 50px 20px;
-    }
-    #contact .container {
-      max-width: 700px;
-      margin: auto;
-    }
-    #contact h2 {
-      margin-bottom: 20px;
-    }
-    #contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    #contact label {
-      font-weight: 600;
-      color: #004aad;
-    }
-    #contact input[type="text"],
-    #contact input[type="email"],
-    #contact textarea {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      width: 100%;
-      resize: vertical;
-    }
-    #contact textarea {
-      min-height: 120px;
-    }
-    #contact button {
-      width: 150px;
-      align-self: flex-start;
-      background: #004aad;
-      color: white;
-      border-radius: 25px;
-      padding: 12px 30px;
-      font-weight: 700;
-      transition: background 0.3s ease;
-    }
-    #contact button:hover {
-      background: #ffd500;
-      color: #004aad;
-    }
-
     /* Footer */
     footer {
       background: #004aad;
@@ -355,11 +188,11 @@
       <div class="logo">ORBIT EYE</div>
       <nav>
         <ul id="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#career">Career</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       </nav>
@@ -370,91 +203,7 @@
     <div class="hero-content">
       <h1>Elevate Your Vision with Orbit Eye</h1>
       <p>Professional drone rental and aerial video marketing services<br />for real estate & weddings.</p>
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
-    </div>
-  </section>
-
-  <section id="about" aria-label="About Orbit Eye Drone Services">
-    <h2 class="section-title">About Us</h2>
-    <div class="content container">
-      <p>
-        Orbit Eye is a leading drone rental and aerial video marketing company dedicated to providing breathtaking visuals that tell your story. 
-        From high-end real estate properties to magical wedding ceremonies, we bring unmatched expertise, creativity, and technology to every project.
-      </p>
-      <p>
-        Our team of professional drone pilots and video editors use the latest equipment to capture stunning aerial footage that helps you stand out, engage your audience, and grow your business.
-      </p>
-    </div>
-  </section>
-
-  <section id="services" aria-label="Orbit Eye Drone Services">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">Explore our range of drone and video marketing solutions tailored for your needs.</p>
-    <div class="services-grid container">
-      <article class="service-card" aria-label="Real Estate Drone Photography">
-        <h3>Real Estate Drone Photography</h3>
-        <p>Showcase your properties with stunning aerial images that highlight the unique features and surroundings to captivate buyers.</p>
-      </article>
-      <article class="service-card" aria-label="Wedding Drone Videography">
-        <h3>Wedding Drone Videography</h3>
-        <p>Capture unforgettable moments from breathtaking aerial perspectives to make your wedding day truly special.</p>
-      </article>
-      <article class="service-card" aria-label="Drone Rental Services">
-        <h3>Drone Rental Services</h3>
-        <p>Rent state-of-the-art drones for your own projects with flexible plans and expert support to ensure seamless operation.</p>
-      </article>
-      <article class="service-card" aria-label="Video Editing & Marketing">
-        <h3>Video Editing & Marketing</h3>
-        <p>Professional editing and digital marketing solutions to maximize the impact of your aerial footage on social platforms and websites.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="career" aria-label="Career Opportunities at Orbit Eye">
-    <h2 class="section-title">Work With Us</h2>
-    <div class="container">
-      <p>
-        Join Orbit Eye's passionate team of drone experts and creative professionals. We’re always looking for talented individuals to grow with us in this exciting industry.
-      </p>
-      <form action="#" method="POST" enctype="multipart/form-data" aria-label="Career Application Form">
-        <label for="designation">Select Designation:</label>
-        <select id="designation" name="designation" required>
-          <option value="">--Select--</option>
-          <option value="drone-pilot">Drone Pilot</option>
-          <option value="video-editor">Video Editor</option>
-          <option value="marketing-executive">Marketing Executive</option>
-          <option value="sales-executive">Sales Executive</option>
-        </select>
-
-        <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" required />
-
-        <label for="email-career">Email Address:</label>
-        <input type="email" id="email-career" name="email-career" required />
-
-        <label for="resume">Upload Resume:</label>
-        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
-
-        <button type="submit">Submit Application</button>
-      </form>
-    </div>
-  </section>
-
-  <section id="contact" aria-label="Contact Orbit Eye">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="container">
-      <form action="#" method="POST" aria-label="Contact Form">
-        <label for="name-contact">Full Name:</label>
-        <input type="text" id="name-contact" name="name-contact" required />
-
-        <label for="email-contact">Email Address:</label>
-        <input type="email" id="email-contact" name="email-contact" required />
-
-        <label for="message-contact">Message:</label>
-        <textarea id="message-contact" name="message-contact" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
+      <button onclick="location.href='contact.html'">Get a Quote</button>
     </div>
   </section>
 
@@ -470,26 +219,6 @@
 
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
-    });
-
-    // Highlight nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('nav ul li a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-      navItems.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === '#' + current) {
-          a.classList.add('active');
-        }
-      });
     });
   </script>
 </body>
