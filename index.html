@@ -19,12 +19,15 @@
       padding: 0;
       background-color: #ffffff;
       color: #1a1a1a;
+      scroll-behavior: smooth;
     }
+    /* Header and Navigation */
     header {
       background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: white;
-      padding: 50px 20px 40px 20px;
+      padding: 40px 20px 80px 20px;
       text-align: center;
+      position: relative;
     }
     header h1 {
       font-size: 3rem;
@@ -32,46 +35,83 @@
     }
     header p {
       font-size: 1.2rem;
-      margin: 0 0 30px 0;
+      margin-top: 0;
+      margin-bottom: 30px;
     }
-    .header-section {
-      background-color: rgba(0, 39, 77, 0.85);
+    nav {
+      background: rgba(0, 39, 77, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+      display: flex;
+      gap: 40px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #fdd835;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #fdd835;
+      color: #00274d;
+    }
+    /* Sections inside header */
+    #about-us, #services, #contact-us {
+      background: rgba(255, 255, 255, 0.9);
+      color: #00274d;
+      margin: 20px auto 0 auto;
+      padding: 20px 30px;
       border-radius: 10px;
-      padding: 20px;
-      margin: 15px auto;
       max-width: 900px;
       text-align: left;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
-    .header-section h2 {
-      color: #fdd835;
-      margin-bottom: 10px;
-      font-weight: 600;
-      font-size: 1.8rem;
+    #about-us h2, #services h2, #contact-us h2 {
+      color: #00274d;
+      margin-top: 0;
+      font-size: 2rem;
+      border-bottom: 3px solid #fdd835;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
     }
-    .header-section h3, .header-section h4 {
-      margin: 12px 0 8px 0;
-      color: #fdd835;
+    #about-us h3, #services h4 {
+      margin: 15px 0 8px;
+      color: #004080;
     }
-    .header-section p {
-      color: #ffffff;
+    #about-us p, #services p, #contact-us p {
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 12px;
     }
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-      color: #1a1a1a;
-    }
-    h2 {
-      font-size: 2rem;
+    .pricing-table {
+      background: #f9f9f9;
+      padding: 15px 20px;
+      border-radius: 8px;
       margin-bottom: 20px;
-      color: #00274d;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
     }
-    h3, h4 {
-      margin: 15px 0 10px;
-      color: #00274d;
+    /* Rest of the page content */
+    main {
+      max-width: 1100px;
+      margin: 40px auto 80px auto;
+      padding: 0 20px;
     }
     .hero-image {
       width: 100%;
@@ -80,29 +120,25 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin: 40px 0;
     }
-    .faq p, .testimonial p, .services p {
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-    .pricing-table {
-      background: #f9f9f9;
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      color: #00274d;
+    .testimonial {
+      text-align: center;
+      max-width: 800px;
+      margin: 50px auto;
+      font-style: italic;
+      color: #004080;
     }
     .testimonial em {
       display: block;
       margin-bottom: 20px;
-      font-style: italic;
     }
     footer {
       background: #00274d;
       color: #fdd835;
       text-align: center;
       padding: 20px;
+      font-size: 0.9rem;
     }
+    /* WhatsApp floating button */
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -114,30 +150,48 @@
       border-radius: 50px;
       text-align: center;
       font-size: 30px;
-      z-index: 100;
+      z-index: 10000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     .whatsapp-float i {
       margin-top: 15px;
     }
     a.contact-link {
-      color: #fdd835;
-      text-decoration: none;
+      color: #00274d;
       font-weight: 600;
+      text-decoration: none;
     }
     a.contact-link:hover {
       text-decoration: underline;
     }
+    /* To offset the fixed nav when scrolling to anchors */
+    section:target::before {
+      content: "";
+      display: block;
+      height: 60px;
+      margin-top: -60px;
+      visibility: hidden;
+    }
   </style>
 </head>
 <body>
+
+  <nav>
+    <ul>
+      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact-us">Contact Us</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Orbit Eye</h1>
     <p>Professional Drone Photography & Videography</p>
 
-    <!-- About Us Section with FAQ inside Header -->
-    <div class="header-section" id="about-us">
+    <!-- About Us Section (FAQ) inside header -->
+    <section id="about-us" aria-label="About Us and FAQ">
       <h2>About Us</h2>
+
       <h3>1. Who Are We?</h3>
       <p>We are a group of passionate aerial filmmakers and certified drone professionals dedicated to providing cinematic drone content for a variety of industries and personal needs.</p>
 
@@ -157,15 +211,16 @@
       <p>We are based in India and operate across metro cities and tier-2 towns, delivering flexible service nationwide.</p>
 
       <h3>7. How to Book Our Services?</h3>
-      <p>Contact us via WhatsApp (<a href="https://wa.me/917217676818" target="_blank" class="contact-link">+91 72176 76818</a>), email (<a href="mailto:ashish.khokhar.kumar55@gmail.com" class="contact-link">ashish.khokhar.kumar55@gmail.com</a>), or fill out our inquiry form for a quote.</p>
+      <p>Contact us via WhatsApp <a class="contact-link" href="https://wa.me/917217676818" target="_blank">+91 72176 76818</a>, email <a class="contact-link" href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a>, or fill out our inquiry form for a quote.</p>
 
       <h3>8. What Are Our Pricing Packages?</h3>
-      <p>Our services are tailored to client requirements. See below for details.</p>
-    </div>
+      <p>Our services are tailored to client requirements. See Services section below for details.</p>
+    </section>
 
-    <!-- Services Section inside Header -->
-    <div class="header-section" id="services">
+    <!-- Services Section inside header -->
+    <section id="services" aria-label="Service Packages and Pricing">
       <h2>Service Packages & Pricing</h2>
+
       <div class="pricing-table">
         <h4>Real Estate - Basic (₹7,500)</h4>
         <p>10 photos, 1-minute video</p>
@@ -174,6 +229,7 @@
         <h4>Premium (₹25,000)</h4>
         <p>30 photos, 3-minute video, virtual tour</p>
       </div>
+
       <div class="pricing-table">
         <h4>Weddings - Silver (₹10,000)</h4>
         <p>Ceremony coverage, 15 photos</p>
@@ -182,39 +238,41 @@
         <h4>Platinum (₹35,000)</h4>
         <p>Full day, 50 photos, 5-minute video, aerial venue shots</p>
       </div>
-    </div>
+    </section>
 
-    <!-- Contact Us Section inside Header -->
-    <div class="header-section" id="contact-us">
+    <!-- Contact Us Section inside header -->
+    <section id="contact-us" aria-label="Contact Details">
       <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:ashish.khokhar.kumar55@gmail.com" class="contact-link">ashish.khokhar.kumar55@gmail.com</a></p>
-      <p>Phone: <a href="tel:+917217676818" class="contact-link">+91 72176 76818</a></p>
+      <p>Email: <a class="contact-link" href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
+      <p>Phone: <a class="contact-link" href="tel:+917217676818">+91 72176 76818</a></p>
       <p>Follow us: 
-        <a href="https://instagram.com/orbiteye" target="_blank" class="contact-link">Instagram</a> | 
-        <a href="https://facebook.com/orbiteye" target="_blank" class="contact-link">Facebook</a> | 
-        <a href="https://youtube.com/orbiteye" target="_blank" class="contact-link">YouTube</a>
+        <a class="contact-link" href="https://instagram.com/orbiteye" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+        <a class="contact-link" href="https://facebook.com/orbiteye" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+        <a class="contact-link" href="https://youtube.com/orbiteye" target="_blank" rel="noopener noreferrer">YouTube</a>
       </p>
-    </div>
+    </section>
   </header>
 
-  <!-- Keep the rest of the sections as-is -->
-  <section>
-    <img class="hero-image" src="https://images.unsplash.com/photo-1600971312647-00d18ef5f5a1?auto=format&fit=crop&w=1200&q=80" alt="Featured drone shot" />
-  </section>
+  <main>
+    <section>
+      <img class="hero-image" src="https://images.unsplash.com/photo-1600971312647-00d18ef5f5a1?auto=format&fit=crop&w=1200&q=80" alt="Featured drone shot" />
+    </section>
 
-  <section class="testimonial">
-    <h2>Client Testimonials</h2>
-    <p><em>"Orbit Eye captured our wedding beautifully. The drone shots added a magical touch." — Rohan & Simran</em></p>
-    <p><em>"Their real estate drone photography helped us sell properties faster." — Mehta Realtors</em></p>
-    <p><em>"Professional, punctual, and creative. Orbit Eye exceeded our expectations." — Ananya Sharma</em></p>
-  </section>
+    <section class="testimonial" aria-label="Client Testimonials">
+      <h2>Client Testimonials</h2>
+      <p><em>"Orbit Eye captured our wedding beautifully. The drone shots added a magical touch." — Rohan & Simran</em></p>
+      <p><em>"Their real estate drone photography helped us sell properties faster." — Mehta Realtors</em></p>
+      <p><em>"Professional, punctual, and creative. Orbit Eye exceeded our expectations." — Ananya Sharma</em></p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
   </footer>
 
-  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
 </body>
 </html>
