@@ -23,21 +23,46 @@
     header {
       background: url('https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: white;
-      padding: 100px 20px;
+      padding: 50px 20px 40px 20px;
       text-align: center;
     }
     header h1 {
       font-size: 3rem;
-      margin: 0;
+      margin: 0 0 10px 0;
     }
     header p {
       font-size: 1.2rem;
-      margin-top: 10px;
+      margin: 0 0 30px 0;
+    }
+    .header-section {
+      background-color: rgba(0, 39, 77, 0.85);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 900px;
+      text-align: left;
+    }
+    .header-section h2 {
+      color: #fdd835;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+    .header-section h3, .header-section h4 {
+      margin: 12px 0 8px 0;
+      color: #fdd835;
+    }
+    .header-section p {
+      color: #ffffff;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
     section {
       max-width: 1100px;
       margin: auto;
       padding: 60px 20px;
+      color: #1a1a1a;
     }
     h2 {
       font-size: 2rem;
@@ -65,6 +90,7 @@
       border-radius: 10px;
       margin-bottom: 30px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #00274d;
     }
     .testimonial em {
       display: block;
@@ -94,68 +120,86 @@
     .whatsapp-float i {
       margin-top: 15px;
     }
+    a.contact-link {
+      color: #fdd835;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.contact-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Orbit Eye</h1>
     <p>Professional Drone Photography & Videography</p>
+
+    <!-- About Us Section with FAQ inside Header -->
+    <div class="header-section" id="about-us">
+      <h2>About Us</h2>
+      <h3>1. Who Are We?</h3>
+      <p>We are a group of passionate aerial filmmakers and certified drone professionals dedicated to providing cinematic drone content for a variety of industries and personal needs.</p>
+
+      <h3>2. How Can We Help in Real Estate?</h3>
+      <p>We help real estate professionals enhance their listings with high-quality aerial photography and videos that give buyers a broader view of the property’s size, neighborhood, and landscape.</p>
+
+      <h3>3. What Services Do We Offer?</h3>
+      <p>We provide aerial photography, cinematic drone videos, real estate virtual tours, wedding drone coverage, event flyovers, and custom drone shooting projects.</p>
+
+      <h3>4. Why Choose Orbit Eye?</h3>
+      <p>We focus on creative visuals, technical precision, safety, and timely delivery — offering clients exceptional service every time.</p>
+
+      <h3>5. What Makes Us Different?</h3>
+      <p>We use cutting-edge drone technology and cinematic storytelling to bring out the beauty and uniqueness of each project.</p>
+
+      <h3>6. Where Do We Operate?</h3>
+      <p>We are based in India and operate across metro cities and tier-2 towns, delivering flexible service nationwide.</p>
+
+      <h3>7. How to Book Our Services?</h3>
+      <p>Contact us via WhatsApp (<a href="https://wa.me/917217676818" target="_blank" class="contact-link">+91 72176 76818</a>), email (<a href="mailto:ashish.khokhar.kumar55@gmail.com" class="contact-link">ashish.khokhar.kumar55@gmail.com</a>), or fill out our inquiry form for a quote.</p>
+
+      <h3>8. What Are Our Pricing Packages?</h3>
+      <p>Our services are tailored to client requirements. See below for details.</p>
+    </div>
+
+    <!-- Services Section inside Header -->
+    <div class="header-section" id="services">
+      <h2>Service Packages & Pricing</h2>
+      <div class="pricing-table">
+        <h4>Real Estate - Basic (₹7,500)</h4>
+        <p>10 photos, 1-minute video</p>
+        <h4>Standard (₹15,000)</h4>
+        <p>20 photos, 2-minute video, highlight reel</p>
+        <h4>Premium (₹25,000)</h4>
+        <p>30 photos, 3-minute video, virtual tour</p>
+      </div>
+      <div class="pricing-table">
+        <h4>Weddings - Silver (₹10,000)</h4>
+        <p>Ceremony coverage, 15 photos</p>
+        <h4>Gold (₹20,000)</h4>
+        <p>Full day, 30 photos, 2-minute video</p>
+        <h4>Platinum (₹35,000)</h4>
+        <p>Full day, 50 photos, 5-minute video, aerial venue shots</p>
+      </div>
+    </div>
+
+    <!-- Contact Us Section inside Header -->
+    <div class="header-section" id="contact-us">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:ashish.khokhar.kumar55@gmail.com" class="contact-link">ashish.khokhar.kumar55@gmail.com</a></p>
+      <p>Phone: <a href="tel:+917217676818" class="contact-link">+91 72176 76818</a></p>
+      <p>Follow us: 
+        <a href="https://instagram.com/orbiteye" target="_blank" class="contact-link">Instagram</a> | 
+        <a href="https://facebook.com/orbiteye" target="_blank" class="contact-link">Facebook</a> | 
+        <a href="https://youtube.com/orbiteye" target="_blank" class="contact-link">YouTube</a>
+      </p>
+    </div>
   </header>
 
-  <section>
-    <h2>About Orbit Eye</h2>
-    <p>Orbit Eye is a premier drone photography and videography company in India, offering creative aerial content for real estate, weddings, and events. Our expert drone pilots and creative team ensure high-quality visuals tailored to your needs. From aerial property overviews to cinematic wedding captures, Orbit Eye delivers excellence and artistry in every frame.</p>
-  </section>
-
+  <!-- Keep the rest of the sections as-is -->
   <section>
     <img class="hero-image" src="https://images.unsplash.com/photo-1600971312647-00d18ef5f5a1?auto=format&fit=crop&w=1200&q=80" alt="Featured drone shot" />
-  </section>
-
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <h3>1. Who Are We?</h3>
-    <p>We are a group of passionate aerial filmmakers and certified drone professionals dedicated to providing cinematic drone content for a variety of industries and personal needs.</p>
-
-    <h3>2. How Can We Help in Real Estate?</h3>
-    <p>We help real estate professionals enhance their listings with high-quality aerial photography and videos that give buyers a broader view of the property’s size, neighborhood, and landscape.</p>
-
-    <h3>3. What Services Do We Offer?</h3>
-    <p>We provide aerial photography, cinematic drone videos, real estate virtual tours, wedding drone coverage, event flyovers, and custom drone shooting projects.</p>
-
-    <h3>4. Why Choose Orbit Eye?</h3>
-    <p>We focus on creative visuals, technical precision, safety, and timely delivery — offering clients exceptional service every time.</p>
-
-    <h3>5. What Makes Us Different?</h3>
-    <p>We use cutting-edge drone technology and cinematic storytelling to bring out the beauty and uniqueness of each project.</p>
-
-    <h3>6. Where Do We Operate?</h3>
-    <p>We are based in India and operate across metro cities and tier-2 towns, delivering flexible service nationwide.</p>
-
-    <h3>7. How to Book Our Services?</h3>
-    <p>Contact us via WhatsApp (+91 72176 76818), email (ashish.khokhar.kumar55@gmail.com), or fill out our inquiry form for a quote.</p>
-
-    <h3>8. What Are Our Pricing Packages?</h3>
-    <p>Our services are tailored to client requirements. See below for details.</p>
-  </section>
-
-  <section class="services">
-    <h2>Service Packages & Pricing</h2>
-    <div class="pricing-table">
-      <h4>Real Estate - Basic (₹7,500)</h4>
-      <p>10 photos, 1-minute video</p>
-      <h4>Standard (₹15,000)</h4>
-      <p>20 photos, 2-minute video, highlight reel</p>
-      <h4>Premium (₹25,000)</h4>
-      <p>30 photos, 3-minute video, virtual tour</p>
-    </div>
-    <div class="pricing-table">
-      <h4>Weddings - Silver (₹10,000)</h4>
-      <p>Ceremony coverage, 15 photos</p>
-      <h4>Gold (₹20,000)</h4>
-      <p>Full day, 30 photos, 2-minute video</p>
-      <h4>Platinum (₹35,000)</h4>
-      <p>Full day, 50 photos, 5-minute video, aerial venue shots</p>
-    </div>
   </section>
 
   <section class="testimonial">
@@ -163,17 +207,6 @@
     <p><em>"Orbit Eye captured our wedding beautifully. The drone shots added a magical touch." — Rohan & Simran</em></p>
     <p><em>"Their real estate drone photography helped us sell properties faster." — Mehta Realtors</em></p>
     <p><em>"Professional, punctual, and creative. Orbit Eye exceeded our expectations." — Ananya Sharma</em></p>
-  </section>
-
-  <section>
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
-    <p>Phone: <a href="tel:+917217676818">+91 72176 76818</a></p>
-    <p>Follow us: 
-      <a href="https://instagram.com/orbiteye" target="_blank">Instagram</a> | 
-      <a href="https://facebook.com/orbiteye" target="_blank">Facebook</a> | 
-      <a href="https://youtube.com/orbiteye" target="_blank">YouTube</a>
-    </p>
   </section>
 
   <footer>
