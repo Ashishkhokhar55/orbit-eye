@@ -50,39 +50,10 @@
       margin-top: 40px;
       color: #004aad;
     }
-    form {
-      background: #f7f7f7;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 600px;
+    .form-container {
+      max-width: 700px;
       margin: 30px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      font-weight: 600;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 12px 0 20px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      resize: vertical;
-    }
-    button {
-      background: #004aad;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background: #ffd500;
-      color: #004aad;
+      padding: 0 10px;
     }
     .contact-info {
       text-align: center;
@@ -110,6 +81,10 @@
       nav ul {
         flex-direction: column;
         gap: 10px;
+      }
+      iframe {
+        width: 100% !important;
+        height: 900px !important;
       }
     }
 
@@ -153,21 +128,10 @@
 
   <main>
     <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/xwpoazdy" method="POST">
-      <!-- Redirect user to thank you page after successful submission -->
-      <input type="hidden" name="_redirect" value="https://ashishkhokhar55.github.io/orbit-eye/thank-you.html" />
-      
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required />
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="_replyto" required />
-
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="form-container">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejt1qM79KO3MQNXbP4HgckG0KFLWDG_V_tRBiZWtdST_Up0Q/viewform?embedded=true" width="100%" height="808" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
 
     <div class="contact-info">
       <p><strong>Phone:</strong> <a href="tel:+917217676818">+91-7217676818</a></p>
