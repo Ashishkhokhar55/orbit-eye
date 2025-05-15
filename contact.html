@@ -33,6 +33,8 @@
       list-style: none;
       display: flex;
       gap: 20px;
+      margin: 0;
+      padding: 0;
     }
     nav a {
       color: white;
@@ -63,6 +65,8 @@
       margin: 12px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
     }
     button {
       background: #004aad;
@@ -97,6 +101,9 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      nav {
+        float: none;
+      }
     }
   </style>
 </head>
@@ -119,17 +126,14 @@
 
   <main>
     <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/ashish.khokhar.kumar55@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://ashishkhokhar55.github.io/orbit-eye/thank-you.html">
-      <input type="hidden" name="_subject" value="New Enquiry from Orbit Eye!">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+    <form action="https://formspree.io/f/mayvdrjo" method="POST">
+      <input type="hidden" name="_redirect" value="https://ashishkhokhar55.github.io/orbit-eye/thank-you.html" />
 
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required />
 
       <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="_replyto" required />
 
       <label for="message">Your Message</label>
       <textarea id="message" name="message" rows="6" required></textarea>
@@ -150,3 +154,4 @@
 
 </body>
 </html>
+    
