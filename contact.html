@@ -173,15 +173,19 @@
 
   <main class="container" role="main">
     <h2>Contact Us</h2>
-    <form action="mailto:ashish.khokhar.kumar55@gmail.com" method="POST" enctype="text/plain">
+    <form action="https://formsubmit.co/ashish.khokhar.kumar55@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Enquiry from Orbit Eye!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
       <label for="name">Name</label>
-      <input type="text" name="Name" id="name" required>
+      <input type="text" name="name" id="name" required>
 
       <label for="email">Email</label>
-      <input type="email" name="Email" id="email" required>
+      <input type="email" name="email" id="email" required>
 
       <label for="message">Message</label>
-      <textarea name="Message" id="message" rows="5" required></textarea>
+      <textarea name="message" id="message" rows="5" required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
