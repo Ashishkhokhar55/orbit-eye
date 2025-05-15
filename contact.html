@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orbit Eye - Contact</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #222;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a {
+      color: #004aad;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ffd500;
+    }
+    ul {
+      list-style: none;
+    }
+    button {
+      background: #004aad;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #ffd500;
+      color: #004aad;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #ffd500;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 4px;
+    }
+    nav a.active,
+    nav a:hover {
+      color: #ffd500;
+      border-bottom: 2px solid #ffd500;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #004aad;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #004aad;
+      color: #ffd500;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #004aad;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 200px;
+        height: calc(100vh - 60px);
+        padding: 20px;
+        transition: right 0.3s ease;
+        z-index: 2000;
+      }
+      nav ul.show {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #ffd500;
+      }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">ORBIT EYE</div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h2>Contact Us</h2>
+    <form action="mailto:ashish.khokhar.kumar55@gmail.com" method="POST" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" name="Name" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="Email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea name="Message" id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Phone:</strong> <a href="tel:+917217676818">+91-7217676818</a></p>
+      <p><strong>Email:</strong> <a href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
+    <p>Contact: +91-7217676818 | Email: ashish.khokhar.kumar55@gmail.com</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
