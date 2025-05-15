@@ -3,132 +3,494 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orbit Eye | Drone Photography & Videography</title>
-  <meta name="description" content="Orbit Eye offers professional drone photography and videography services for real estate, weddings, and special events across India. Certified drone pilots. Stunning aerial visuals." />
-  <meta name="keywords" content="drone photography India, real estate aerial shots, wedding drone video, Orbit Eye, drone services, aerial videography, cinematic drone" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://orbiteye.in.xyz/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Orbit Eye - Drone Rental & Video Marketing</title>
   <style>
+    /* Reset & basics */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
+      background: #fff;
+      color: #222;
       line-height: 1.6;
+      font-size: 16px;
+      scroll-behavior: smooth;
     }
-    nav {
-      background-color: #003366;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li a {
-      color: #fff;
+    a {
+      color: #004aad;
       text-decoration: none;
-      font-weight: 500;
+      transition: color 0.3s ease;
     }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #f5f5f5;
+    a:hover {
+      color: #ffd500;
     }
-    header img {
+    img {
       max-width: 100%;
       height: auto;
-      border-radius: 8px;
-      margin-top: 20px;
+      display: block;
     }
-    section {
-      padding: 40px 20px;
+    ul {
+      list-style: none;
     }
-    h2, h3 {
-      color: #003366;
+    button {
+      cursor: pointer;
+      background: #004aad;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
-    .pricing-table h4 {
-      margin: 10px 0 5px;
+    button:hover {
+      background: #ffd500;
+      color: #004aad;
     }
-    .contact-link {
-      color: #003366;
-      text-decoration: none;
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: #004aad;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #ffd500;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+    nav li {
+      position: relative;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 4px;
+      display: inline-block;
+    }
+    nav a.active,
+    nav a:hover {
+      color: #ffd500;
+      border-bottom: 2px solid #ffd500;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      height: 90vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 74, 173, 0.6);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.1;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .hero-content button {
+      font-size: 1.1rem;
+      padding: 14px 36px;
+      font-weight: 700;
+      border-radius: 40px;
+    }
+
+    /* Section Titles */
+    h2.section-title {
+      color: #004aad;
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 60px 0 30px;
+      font-weight: 700;
+    }
+    p.section-subtitle {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* About Section */
+    #about {
+      padding: 50px 20px;
+      background: #f5f7fb;
+    }
+    #about .content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    #about .content p {
+      font-size: 1.15rem;
+      color: #333;
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+
+    /* Services Section */
+    #services {
+      padding: 50px 20px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .service-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 25px;
+      background: white;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+    }
+    .service-card h3 {
+      color: #004aad;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .service-card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Career Section */
+    #career {
+      background: #f5f7fb;
+      padding: 50px 20px;
+    }
+    #career .container {
+      max-width: 700px;
+      margin: auto;
+    }
+    #career h2 {
+      margin-bottom: 15px;
+    }
+    #career p {
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    #career form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #career label {
+      font-weight: 600;
+      color: #004aad;
+    }
+    #career select,
+    #career input[type="text"],
+    #career input[type="email"],
+    #career input[type="file"] {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+    #career button {
+      align-self: flex-start;
+      background: #004aad;
+      color: white;
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+    #career button:hover {
+      background: #ffd500;
+      color: #004aad;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 50px 20px;
+    }
+    #contact .container {
+      max-width: 700px;
+      margin: auto;
+    }
+    #contact h2 {
+      margin-bottom: 20px;
+    }
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #contact label {
+      font-weight: 600;
+      color: #004aad;
+    }
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100%;
+      resize: vertical;
+    }
+    #contact textarea {
+      min-height: 120px;
+    }
+    #contact button {
+      width: 150px;
+      align-self: flex-start;
+      background: #004aad;
+      color: white;
+      border-radius: 25px;
+      padding: 12px 30px;
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+    #contact button:hover {
+      background: #ffd500;
+      color: #004aad;
+    }
+
+    /* Footer */
+    footer {
+      background: #004aad;
+      color: #ffd500;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #004aad;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 200px;
+        height: calc(100vh - 60px);
+        padding: 20px;
+        transition: right 0.3s ease;
+        z-index: 2000;
+      }
+      nav ul.show {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #ffd500;
+      }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#about-us" class="nav-link active">About Us</a></li>
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#contact-us" class="nav-link">Contact Us</a></li>
-    </ul>
-  </nav>
 
   <header>
-    <h1>Orbit Eye</h1>
-    <p>Professional Drone Photography & Videography</p>
-    <img src="https://images.unsplash.com/photo-1617019114583-0473c135fcd7" alt="Drone view of buildings" />
+    <div class="container">
+      <div class="logo">ORBIT EYE</div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </nav>
+    </div>
   </header>
 
-  <section id="about-us">
-    <h2>About Us</h2>
-    <h3>1. Who Are We?</h3>
-    <p>We are a group of passionate aerial filmmakers and certified drone professionals dedicated to providing cinematic drone content for a variety of industries and personal needs.</p>
-    <h3>2. How Can We Help in Real Estate?</h3>
-    <p>We help real estate professionals enhance their listings with high-quality aerial photography and videos that give buyers a broader view of the property’s size, neighborhood, and landscape.</p>
-    <h3>3. What Services Do We Offer?</h3>
-    <p>We provide aerial photography, cinematic drone videos, real estate virtual tours, wedding drone coverage, event flyovers, and custom drone shooting projects.</p>
-    <h3>4. Why Choose Orbit Eye?</h3>
-    <p>We focus on creative visuals, technical precision, safety, and timely delivery — offering clients exceptional service every time.</p>
-    <h3>5. What Makes Us Different?</h3>
-    <p>We use cutting-edge drone technology and cinematic storytelling to bring out the beauty and uniqueness of each project.</p>
-    <h3>6. Where Do We Operate?</h3>
-    <p>We are based in India and operate across metro cities and tier-2 towns, delivering flexible service nationwide.</p>
-  </section>
-
-  <section>
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Sky view of apartments" style="width:100%; border-radius:10px;" />
-  </section>
-
-  <section id="services">
-    <h2>Service Packages & Pricing</h2>
-    <div class="pricing-table">
-      <h4>Real Estate - Basic (₹7,500)</h4>
-      <p>10 photos, 1-minute video</p>
-      <h4>Standard (₹15,000)</h4>
-      <p>20 photos, 2-minute video, highlight reel</p>
-      <h4>Premium (₹25,000)</h4>
-      <p>30 photos, 3-minute video, virtual tour</p>
-    </div>
-
-    <div class="pricing-table">
-      <h4>Weddings - Silver (₹10,000)</h4>
-      <p>Ceremony coverage, 15 photos</p>
-      <h4>Gold (₹20,000)</h4>
-      <p>Full day, 30 photos, 2-minute video</p>
-      <h4>Platinum (₹35,000)</h4>
-      <p>Full day, 50 photos, 5-minute video, aerial venue shots</p>
+  <section class="hero" id="home" role="banner" aria-label="Orbit Eye Drone Rental Hero">
+    <div class="hero-content">
+      <h1>Elevate Your Vision with Orbit Eye</h1>
+      <p>Professional drone rental and aerial video marketing services<br />for real estate & weddings.</p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
     </div>
   </section>
 
-  <section id="contact-us">
-    <h2>Contact Us</h2>
-    <p>Email: <a class="contact-link" href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
-    <p>Phone: <a class="contact-link" href="tel:+917217676818">+91 72176 76818</a></p>
-    <p>
-      Follow us:
-      <a class="contact-link" href="https://instagram.com/orbiteye" target="_blank" rel="noopener noreferrer">Instagram</a> |
-      <a class="contact-link" href="https://facebook.com/orbiteye" target="_blank" rel="noopener noreferrer">Facebook</a> |
-      <a class="contact-link" href="https://youtube.com/orbiteye" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </p>
+  <section id="about" aria-label="About Orbit Eye Drone Services">
+    <h2 class="section-title">About Us</h2>
+    <div class="content container">
+      <p>
+        Orbit Eye is a leading drone rental and aerial video marketing company dedicated to providing breathtaking visuals that tell your story. 
+        From high-end real estate properties to magical wedding ceremonies, we bring unmatched expertise, creativity, and technology to every project.
+      </p>
+      <p>
+        Our team of professional drone pilots and video editors use the latest equipment to capture stunning aerial footage that helps you stand out, engage your audience, and grow your business.
+      </p>
+    </div>
   </section>
+
+  <section id="services" aria-label="Orbit Eye Drone Services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Explore our range of drone and video marketing solutions tailored for your needs.</p>
+    <div class="services-grid container">
+      <article class="service-card" aria-label="Real Estate Drone Photography">
+        <h3>Real Estate Drone Photography</h3>
+        <p>Showcase your properties with stunning aerial images that highlight the unique features and surroundings to captivate buyers.</p>
+      </article>
+      <article class="service-card" aria-label="Wedding Drone Videography">
+        <h3>Wedding Drone Videography</h3>
+        <p>Capture unforgettable moments from breathtaking aerial perspectives to make your wedding day truly special.</p>
+      </article>
+      <article class="service-card" aria-label="Drone Rental Services">
+        <h3>Drone Rental Services</h3>
+        <p>Rent state-of-the-art drones for your own projects with flexible plans and expert support to ensure seamless operation.</p>
+      </article>
+      <article class="service-card" aria-label="Video Editing & Marketing">
+        <h3>Video Editing & Marketing</h3>
+        <p>Professional editing and digital marketing solutions to maximize the impact of your aerial footage on social platforms and websites.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="career" aria-label="Career Opportunities at Orbit Eye">
+    <h2 class="section-title">Work With Us</h2>
+    <div class="container">
+      <p>
+        Join Orbit Eye's passionate team of drone experts and creative professionals. We’re always looking for talented individuals to grow with us in this exciting industry.
+      </p>
+      <form action="#" method="POST" enctype="multipart/form-data" aria-label="Career Application Form">
+        <label for="designation">Select Designation:</label>
+        <select id="designation" name="designation" required>
+          <option value="">--Select--</option>
+          <option value="drone-pilot">Drone Pilot</option>
+          <option value="video-editor">Video Editor</option>
+          <option value="marketing-executive">Marketing Executive</option>
+          <option value="sales-executive">Sales Executive</option>
+        </select>
+
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email-career">Email Address:</label>
+        <input type="email" id="email-career" name="email-career" required />
+
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" aria-label="Contact Orbit Eye">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="container">
+      <form action="#" method="POST" aria-label="Contact Form">
+        <label for="name-contact">Full Name:</label>
+        <input type="text" id="name-contact" name="name-contact" required />
+
+        <label for="email-contact">Email Address:</label>
+        <input type="email" id="email-contact" name="email-contact" required />
+
+        <label for="message-contact">Message:</label>
+        <textarea id="message-contact" name="message-contact" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
+    <p>Contact: +91-XXXXXXXXXX | Email: info@orbiteye.com</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Highlight nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navItems.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) {
+          a.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
