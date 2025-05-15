@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orbit Eye - Services</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #222;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a {
+      color: #004aad;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ffd500;
+    }
+    ul {
+      list-style: none;
+    }
+    button {
+      background: #004aad;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #ffd500;
+      color: #004aad;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #ffd500;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 4px;
+    }
+    nav a.active,
+    nav a:hover {
+      color: #ffd500;
+      border-bottom: 2px solid #ffd500;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      border: 1px solid #ccc;
+      padding: 25px;
+      border-radius: 10px;
+      transition: box-shadow 0.3s ease;
+      background-color: #f9f9f9;
+    }
+    .service-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .service-card h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    footer {
+      background: #004aad;
+      color: #ffd500;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #004aad;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 200px;
+        height: calc(100vh - 60px);
+        padding: 20px;
+        transition: right 0.3s ease;
+        z-index: 2000;
+      }
+      nav ul.show {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #ffd500;
+      }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">ORBIT EYE</div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h2 style="text-align:center; font-size: 2.2rem; margin-bottom: 30px; color: #004aad;">Our Drone Services</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Real Estate Aerial Shoots</h3>
+        <p>Capture stunning aerial views of properties to enhance real estate listings and attract more buyers.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Wedding Drone Coverage</h3>
+        <p>Make your wedding memorable with cinematic drone footage of the venue, guests, and special moments.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Video Marketing Packages</h3>
+        <p>Boost your brand presence with professional video packages including drone shots and creative edits.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Construction Site Monitoring</h3>
+        <p>Track progress with regular aerial footage of construction and infrastructure projects.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Survey & Mapping</h3>
+        <p>Use drone tech for topographic surveys, 3D mapping, and land measurement with precision.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Custom Drone Projects</h3>
+        <p>Have a unique requirement? We provide customized drone services tailored to your project goals.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
+    <p>Contact: +91-XXXXXXXXXX | Email: info@orbiteye.com</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
