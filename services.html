@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orbit Eye - Services</title>
+  <title>Orbit Eye - Professional Drone Services</title>
   <style>
     /* Reset and base */
     * {
@@ -16,6 +16,9 @@
       color: #222;
       font-size: 16px;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     a {
       color: #004aad;
@@ -28,36 +31,23 @@
     ul {
       list-style: none;
     }
-    button {
-      background: #004aad;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #ffd500;
-      color: #004aad;
-    }
+    /* Container */
     .container {
       width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 0;
+      max-width: 1100px;
+      margin: 40px auto 80px auto;
+      flex: 1;
     }
 
     /* Header */
     header {
       background: #004aad;
-      color: white;
-      padding: 15px 0;
+      color: #ffd500;
+      padding: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
     header .container {
       display: flex;
@@ -66,18 +56,17 @@
     }
     .logo {
       font-weight: 900;
-      font-size: 1.8rem;
-      color: #ffd500;
+      font-size: 2rem;
       letter-spacing: 2px;
     }
     nav ul {
       display: flex;
-      gap: 25px;
+      gap: 30px;
     }
     nav a {
       font-weight: 600;
       font-size: 1rem;
-      padding: 8px 4px;
+      padding: 8px 0;
       position: relative;
     }
     nav a.active,
@@ -95,28 +84,67 @@
       background: #ffd500;
       border-radius: 2px;
     }
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: #ffd500;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 200px;
+        height: calc(100vh - 70px);
+        background: #004aad;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        transition: right 0.3s ease;
+        border-left: 4px solid #ffd500;
+        z-index: 2000;
+      }
+      nav ul.show {
+        right: 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
 
-    /* Services grid */
+    /* Page Title */
+    h1.page-title {
+      text-align: center;
+      color: #004aad;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
       gap: 30px;
     }
     .service-card {
-      border-radius: 12px;
-      padding: 25px;
-      background-color: #f9f9f9;
-      box-shadow: 0 8px 16px rgba(0, 74, 173, 0.1);
+      background: #f5faff;
+      border-radius: 14px;
+      padding: 30px 25px;
+      box-shadow: 0 6px 15px rgba(0, 74, 173, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
     }
     .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 74, 173, 0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 74, 173, 0.25);
     }
-    .service-card h3 {
+    .service-card h2 {
+      font-size: 1.6rem;
       color: #004aad;
-      font-size: 1.5rem;
       margin-bottom: 12px;
       font-weight: 700;
     }
@@ -126,66 +154,61 @@
       line-height: 1.5;
     }
 
+    /* Contact Section */
+    .contact-section {
+      background: #e9f0ff;
+      border-radius: 12px;
+      padding: 30px 20px;
+      margin-top: 50px;
+      box-shadow: 0 6px 15px rgba(0, 74, 173, 0.1);
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: #004aad;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .contact-info {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #222;
+    }
+    .contact-info strong {
+      color: #004aad;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 480px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
     /* Footer */
     footer {
       background: #004aad;
       color: #ffd500;
       text-align: center;
-      padding: 25px 20px;
+      padding: 20px 10px;
       font-size: 0.9rem;
-      margin-top: 60px;
       user-select: none;
+      margin-top: auto;
     }
     footer p {
-      margin: 6px 0;
-    }
-    footer a {
-      color: #ffd500;
-      text-decoration: underline;
+      margin: 5px 0;
     }
 
-    /* Mobile menu */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 12px;
-        background: #004aad;
-        position: fixed;
-        top: 60px;
-        right: -100%;
-        width: 220px;
-        height: calc(100vh - 60px);
-        padding: 20px;
-        transition: right 0.3s ease;
-        z-index: 2000;
-        border-left: 3px solid #ffd500;
-      }
-      nav ul.show {
-        right: 0;
-      }
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 1.8rem;
-        color: #ffd500;
-      }
-    }
-    @media (min-width: 769px) {
-      .menu-toggle {
-        display: none;
-      }
-    }
-
-    /* Floating WhatsApp button */
+    /* WhatsApp floating button */
     #whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #25d366;
-      width: 60px;
-      height: 60px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -199,38 +222,6 @@
       width: 30px;
       height: 30px;
       fill: white;
-    }
-
-    /* Contact & Query Form */
-    .contact-section {
-      margin-top: 50px;
-      padding: 30px;
-      background: #f0f5ff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 74, 173, 0.1);
-    }
-    .contact-section h2 {
-      color: #004aad;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      font-weight: 700;
-      text-align: center;
-    }
-    .contact-info {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      color: #333;
-    }
-    .contact-info strong {
-      color: #004aad;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 450px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -247,54 +238,53 @@
           <li><a href="career.html">Career</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <div id="menu-toggle" class="menu-toggle" tabindex="0" aria-label="Toggle menu">&#9776;</div>
       </nav>
     </div>
   </header>
 
-  <main class="container" role="main">
-    <h2>Our Professional Drone Services</h2>
-    <div class="services-grid">
+  <main class="container" role="main" aria-labelledby="services-title">
+    <h1 class="page-title" id="services-title">Our Drone Services</h1>
 
-      <div class="service-card">
-        <h3>Real Estate Aerial Shoots</h3>
-        <p>Capture stunning aerial views of properties to enhance real estate listings and attract more buyers.</p>
-      </div>
+    <section class="services-grid" aria-label="List of services">
+      <article class="service-card" tabindex="0">
+        <h2>Real Estate Aerial Photography</h2>
+        <p>Showcase properties with stunning high-resolution aerial photos that boost buyer interest and sales.</p>
+      </article>
 
-      <div class="service-card">
-        <h3>Wedding Drone Coverage</h3>
-        <p>Make your wedding memorable with cinematic drone footage of the venue, guests, and special moments.</p>
-      </div>
+      <article class="service-card" tabindex="0">
+        <h2>Wedding Cinematic Coverage</h2>
+        <p>Capture your special day from breathtaking angles with smooth drone video footage and creative edits.</p>
+      </article>
 
-      <div class="service-card">
-        <h3>Video Marketing Packages</h3>
-        <p>Boost your brand presence with professional video packages including drone shots and creative edits.</p>
-      </div>
+      <article class="service-card" tabindex="0">
+        <h2>Marketing & Promotional Videos</h2>
+        <p>Elevate your brand with professional drone videos designed for social media, websites, and ads.</p>
+      </article>
 
-      <div class="service-card">
-        <h3>Construction Site Monitoring</h3>
-        <p>Track progress with regular aerial footage of construction and infrastructure projects.</p>
-      </div>
+      <article class="service-card" tabindex="0">
+        <h2>Construction Monitoring & Surveys</h2>
+        <p>Keep track of project progress with scheduled aerial inspections and precise land surveys.</p>
+      </article>
 
-      <div class="service-card">
-        <h3>Survey & Mapping</h3>
-        <p>Use drone tech for topographic surveys, 3D mapping, and land measurement with precision.</p>
-      </div>
+      <article class="service-card" tabindex="0">
+        <h2>3D Mapping & Land Surveys</h2>
+        <p>Utilize advanced drone mapping to create accurate 3D models and topographical data.</p>
+      </article>
 
-      <div class="service-card">
-        <h3>Custom Drone Projects</h3>
-        <p>Have a unique requirement? We provide customized drone services tailored to your project goals.</p>
-      </div>
+      <article class="service-card" tabindex="0">
+        <h2>Custom Drone Solutions</h2>
+        <p>Have a unique drone requirement? We tailor our services to meet your specific project goals.</p>
+      </article>
+    </section>
 
-    </div>
-
-    <section class="contact-section" aria-label="Contact and query form">
+    <section class="contact-section" aria-label="Contact information and enquiry form">
       <h2>Get In Touch / Make An Enquiry</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> ashish.khokhar.kumar55@gmail.com</p>
-        <p><strong>Phone:</strong> +91-7217676818</p>
-      </div>
-      <!-- Google Form iframe - replace src with your actual form URL -->
+      <p class="contact-info">
+        <strong>Email:</strong> ashish.khokhar.kumar55@gmail.com<br />
+        <strong>Phone:</strong> +91-7217676818
+      </p>
+      <!-- Replace the iframe src with your actual Google Form embed link -->
       <iframe src="https://docs.google.com/forms/d/e/your-google-form-id/viewform?embedded=true" title="Enquiry Form"></iframe>
     </section>
   </main>
@@ -304,27 +294,26 @@
     <p>Contact: +91-7217676818 | Email: ashish.khokhar.kumar55@gmail.com</p>
   </footer>
 
-  <!-- Floating WhatsApp Icon -->
   <a href="https://wa.me/917217676818" target="_blank" id="whatsapp-float" aria-label="Chat with us on WhatsApp">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M20.52 3.48A11.89 11.89 0 0 0 12 0C5.37 0 .09 5.28.09 11.91a11.72 11.72 0 0 0 2.06 6.34L0 24l6.02-2.06a11.79 11.79 0 0 0 5.98 1.54h.01c6.63 0 11.91-5.28 11.91-11.91a11.78 11.78 0 0 0-3.4-8.09Zm-8.3 17.2c-1.77 0-3.51-.48-4.98-1.4l-.36-.22-3.58 1.22 1.2-3.5-.23-.37a8.18 8.18 0 0 1-1.33-4.97 8.28 8.28 0 0 1 15.18-5.76 8.25 8.25 0 0 1-5.03 14.6Zm4.74-6.52c-.26-.13-1.53-.75-1.77-.83-.24-.08-.42-.13-.6.13-.18.26-.7.82-.86.99-.16.18-.32.2-.59.07-.26-.13-1.1-.41-2.09-1.29-.77-.68-1.28-1.52-1.43-1.78-.15-.26-.02-.4.11-.53.11-.11.26-.29.39-.44.13-.15.17-.26.26-.43.08-.17.04-.32-.02-.45-.07-.13-.6-1.44-.82-1.98-.22-.52-.45-.45-.6-.46-.15-.01-.32-.01-.49-.01-.17 0-.45.06-.69.32-.24.26-.93.91-.93 2.22 0 1.31.95 2.57 1.08 2.75.13.18 1.86 2.85 4.52 3.99 1.63.7 2.9.89 3.91.72 1.2-.2 3.68-1.5 4.2-2.95.52-1.45.52-2.7.36-2.95-.17-.26-.62-.41-1.28-.74Z"/>
     </svg>
   </a>
 
   <script>
-    // Mobile menu toggle
+    // Mobile menu toggle script
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
+
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
+
     menuToggle.addEventListener('keypress', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         menuToggle.click();
       }
     });
   </script>
-
-</body>
-</html>
+</
