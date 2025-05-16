@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orbit Eye - Services</title>
   <style>
+    /* Reset and base */
     * {
       box-sizing: border-box;
       margin: 0; padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background: #ffffff;
-      color: #222222;
+      background: #fff;
+      color: #222;
       font-size: 16px;
       line-height: 1.6;
-      min-height: 100vh;
-      padding-bottom: 80px; /* space for footer */
     }
     a {
       color: #004aad;
@@ -50,15 +49,15 @@
       padding: 40px 0;
     }
 
-    /* HEADER styling like about.html */
+    /* Header */
     header {
-      background: #004aad;  /* blue background */
-      color: #ffd500;       /* yellow text */
-      padding: 20px 0;
+      background: #004aad;
+      color: white;
+      padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
     header .container {
       display: flex;
@@ -67,102 +66,99 @@
     }
     .logo {
       font-weight: 900;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #ffd500;
       letter-spacing: 2px;
-      user-select: none;
     }
     nav ul {
       display: flex;
-      gap: 30px;
+      gap: 25px;
     }
     nav a {
       font-weight: 600;
-      font-size: 1.1rem;
-      padding: 10px 8px;
-      color: #ffd500;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
+      padding: 8px 4px;
+      position: relative;
     }
-    nav a:hover,
-    nav a.active {
-      color: #ffffff;
-      border-bottom: 2px solid #ffd500;
+    nav a.active,
+    nav a:hover {
+      color: #ffd500;
+    }
+    nav a.active::after,
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #ffd500;
+      border-radius: 2px;
     }
 
+    /* Services grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      margin-top: 20px;
     }
     .service-card {
-      border: 1px solid #ccc;
+      border-radius: 12px;
       padding: 25px;
-      border-radius: 10px;
       background-color: #f9f9f9;
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0, 74, 173, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
     .service-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 74, 173, 0.25);
     }
     .service-card h3 {
       color: #004aad;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
     }
 
+    /* Footer */
     footer {
       background: #004aad;
       color: #ffd500;
       text-align: center;
-      padding: 20px 10px;
+      padding: 25px 20px;
       font-size: 0.9rem;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
-      z-index: 1000;
+      margin-top: 60px;
+      user-select: none;
+    }
+    footer p {
+      margin: 6px 0;
+    }
+    footer a {
+      color: #ffd500;
+      text-decoration: underline;
     }
 
-    /* Floating WhatsApp Icon */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 90px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 1001;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease;
-    }
-    .whatsapp-float:hover {
-      background-color: #128c4a;
-    }
-
+    /* Mobile menu */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         background: #004aad;
         position: fixed;
-        top: 70px;
+        top: 60px;
         right: -100%;
         width: 220px;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 60px);
         padding: 20px;
         transition: right 0.3s ease;
         z-index: 2000;
+        border-left: 3px solid #ffd500;
       }
       nav ul.show {
         right: 0;
@@ -170,7 +166,7 @@
       .menu-toggle {
         display: block;
         cursor: pointer;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         color: #ffd500;
       }
     }
@@ -178,6 +174,63 @@
       .menu-toggle {
         display: none;
       }
+    }
+
+    /* Floating WhatsApp button */
+    #whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+    }
+    #whatsapp-float:hover {
+      background-color: #128c4a;
+    }
+    #whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    /* Contact & Query Form */
+    .contact-section {
+      margin-top: 50px;
+      padding: 30px;
+      background: #f0f5ff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 74, 173, 0.1);
+    }
+    .contact-section h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .contact-info {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .contact-info strong {
+      color: #004aad;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -200,7 +253,7 @@
   </header>
 
   <main class="container" role="main">
-    <h2 style="text-align:center; font-size: 2.2rem; margin-bottom: 30px; color: #004aad;">Our Drone Services</h2>
+    <h2>Our Professional Drone Services</h2>
     <div class="services-grid">
 
       <div class="service-card">
@@ -234,6 +287,16 @@
       </div>
 
     </div>
+
+    <section class="contact-section" aria-label="Contact and query form">
+      <h2>Get In Touch / Make An Enquiry</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> ashish.khokhar.kumar55@gmail.com</p>
+        <p><strong>Phone:</strong> +91-7217676818</p>
+      </div>
+      <!-- Google Form iframe - replace src with your actual form URL -->
+      <iframe src="https://docs.google.com/forms/d/e/your-google-form-id/viewform?embedded=true" title="Enquiry Form"></iframe>
+    </section>
   </main>
 
   <footer>
@@ -241,7 +304,27 @@
     <p>Contact: +91-7217676818 | Email: ashish.khokhar.kumar55@gmail.com</p>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/917217676818" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg style="width:30px;height:30px;" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20.52 3.48A11.82 11.
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/917217676818" target="_blank" id="whatsapp-float" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.89 11.89 0 0 0 12 0C5.37 0 .09 5.28.09 11.91a11.72 11.72 0 0 0 2.06 6.34L0 24l6.02-2.06a11.79 11.79 0 0 0 5.98 1.54h.01c6.63 0 11.91-5.28 11.91-11.91a11.78 11.78 0 0 0-3.4-8.09Zm-8.3 17.2c-1.77 0-3.51-.48-4.98-1.4l-.36-.22-3.58 1.22 1.2-3.5-.23-.37a8.18 8.18 0 0 1-1.33-4.97 8.28 8.28 0 0 1 15.18-5.76 8.25 8.25 0 0 1-5.03 14.6Zm4.74-6.52c-.26-.13-1.53-.75-1.77-.83-.24-.08-.42-.13-.6.13-.18.26-.7.82-.86.99-.16.18-.32.2-.59.07-.26-.13-1.1-.41-2.09-1.29-.77-.68-1.28-1.52-1.43-1.78-.15-.26-.02-.4.11-.53.11-.11.26-.29.39-.44.13-.15.17-.26.26-.43.08-.17.04-.32-.02-.45-.07-.13-.6-1.44-.82-1.98-.22-.52-.45-.45-.6-.46-.15-.01-.32-.01-.49-.01-.17 0-.45.06-.69.32-.24.26-.93.91-.93 2.22 0 1.31.95 2.57 1.08 2.75.13.18 1.86 2.85 4.52 3.99 1.63.7 2.9.89 3.91.72 1.2-.2 3.68-1.5 4.2-2.95.52-1.45.52-2.7.36-2.95-.17-.26-.62-.41-1.28-.74Z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+    menuToggle.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+  </script>
+
+</body>
+</html>
