@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orbit Eye - Services</title>
   <style>
+    /* Reset and base */
     * {
       box-sizing: border-box;
       margin: 0; padding: 0;
@@ -15,6 +16,9 @@
       color: #222;
       font-size: 16px;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     a {
       color: #004aad;
@@ -46,16 +50,18 @@
       max-width: 1200px;
       margin: auto;
       padding: 40px 0;
+      flex-grow: 1;
     }
 
+    /* Header styles exactly as about.html */
     header {
-      background: #0f2347; /* exact dark blue from about.html */
+      background-color: #003566; /* dark navy */
       color: white;
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
     header .container {
       display: flex;
@@ -63,16 +69,12 @@
       align-items: center;
     }
     .logo {
-      font-weight: 900;
-      font-size: 1.8rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      letter-spacing: 6px;
-      background: linear-gradient(90deg, #fff 0%, #FFD500 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 8px #FFD500;
-      cursor: default;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #fff; /* white */
       user-select: none;
+      letter-spacing: 1px;
     }
     nav ul {
       display: flex;
@@ -82,15 +84,23 @@
       font-weight: 600;
       font-size: 1rem;
       padding: 8px 4px;
-      color: white;
-      transition: color 0.3s ease;
+      color: #fff;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
     }
     nav a.active,
     nav a:hover {
-      color: #ffd500;
+      color: #ffd500; /* yellow highlight */
       border-bottom: 2px solid #ffd500;
     }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #ffd500;
+      cursor: pointer;
+    }
 
+    /* Services grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -107,49 +117,26 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .service-card h3 {
-      color: #004aad;
+      color: #003566; /* dark navy heading */
       margin-bottom: 10px;
       font-size: 1.4rem;
     }
 
     footer {
-      background: #0f2347; /* same dark blue */
+      background-color: #003566;
       color: #ffd500;
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9rem;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+      user-select: none;
     }
 
-    /* Floating WhatsApp Icon */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 10000;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-    }
-    .whatsapp-float:hover {
-      background-color: #128c4a;
-    }
-
+    /* Responsive */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
         gap: 10px;
-        background: #0f2347;
+        background-color: #003566;
         position: fixed;
         top: 60px;
         right: -100%;
@@ -164,14 +151,6 @@
       }
       .menu-toggle {
         display: block;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: #ffd500;
-      }
-    }
-    @media (min-width: 769px) {
-      .menu-toggle {
-        display: none;
       }
     }
   </style>
@@ -180,7 +159,7 @@
 
   <header>
     <div class="container">
-      <div class="logo">ORBIT EYE</div>
+      <div class="logo">Orbit Eye</div>
       <nav>
         <ul id="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -195,7 +174,7 @@
   </header>
 
   <main class="container" role="main">
-    <h2 style="text-align:center; font-size: 2.2rem; margin-bottom: 30px; color: #004aad;">Our Drone Services</h2>
+    <h2 style="text-align:center; font-size: 2.2rem; margin-bottom: 30px; color: #003566;">Our Drone Services</h2>
     <div class="services-grid">
 
       <div class="service-card">
@@ -236,10 +215,11 @@
     <p>Contact: +91-7217676818 | Email: ashish.khokhar.kumar55@gmail.com</p>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#fff" d="M20.52 3.48a11.81 11.81 0 0 0-16.7 0 11.787 11.787 0 0 0-3.08 8.33c0 2.06.53 4.06 1.54 5.81L2 22l4.62-1.46a11.74 11.74 0 0 0 6.4 1.8c6.52 0 11.82-5.3 11.82-11.82 0-3.18-1.23-6.18-3.32-8.34zM12.05 19a8.22 8.22 0 0 1-4.44-1.3l-.32-.19-2.74.87.9-2.67-.21-.34a7.89 7.89 0 0 1-1.3-4.3c0-4.4 3.58-7.98 7.98-7.98 2.13 0 4.14.83 5.65 2.35a7.96 7.96 0 0 1 2.34 5.62c0 4.4-3.58 7.98-7.98 7.98zm4.6-6.03c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.57.13-.17.25-.67.81-.82.98-.15.17-.3.19-.55.06a7.38 7.38 0 0 1-2.16-1.34 8.21 8.21 0 0 1-1.52-1.87c-.16-.26-.02-.4.11-.53.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.87-.2-.5-.41-.43-.57-.44-.15-.01-.32-.01-.49-.01-.17 0-.45.06-.68.31-.23.25-.88.85-.88 2.07 0 1.22.9 2.4 1.03 2.57.13.17 1.78 2.72 4.32 3.81.6.26 1.07.41 1.44.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.57.21-1.06.15-1.18-.06-.12-.23-.19-.48-.32z"/>
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/917217676818" target="_blank" 
+    style="position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; border-radius: 50%; width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3); text-decoration: none; z-index: 10000;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.52 3.48a11.91 11.91 0 0 0-16.84 0c-4.72 4.72-4.44 12.43.67 17.14l-1.73 5.01 5.18-1.67a11.91 11.91 0 0 0 13.85-20.48Zm-6.52 14.5a8.63 8.63 0 0 1-4.72-1.57l-.34-.22-2.79.9.94-2.72-.22-.34a8.6 8.6 0 0 1 1.57-4.72 2.6 2.6 0 0 1 1.75-1.08c.27-.03.52-.05.77-.05a2.5 2.5 0 0 1 1.91.95c.23.3.35.67.35 1.05 0 .48-.22.9-.57 1.2-.4.37-1.05.8-1.36 1.02-.25.15-.45.26-.61.37-.24.18-.45.38-.59.59-.14.2-.3.48-.3.72 0 .3.18.6.47.9.3.3.66.48 1.05.48a2.7 2.7 0 0 0 1.33-.35l.23-.14.32.18a8.67 8.67 0 0 1-2.3 1.56Z"/>
     </svg>
   </a>
 
