@@ -5,32 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orbit Eye - Career</title>
   <style>
-    /* Reset and base styles */
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      margin: 0; padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     body {
-      background: #fff;
+      background-color: #ffffff;
       color: #222;
       font-size: 16px;
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* Header */
     header {
-      background-color: #004aad; /* same dark blue as about.html */
-      color: white;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background-color: #0B1F38;
+      color: #FFFFFF;
+      padding: 20px 0;
     }
-    header .container {
+
+    .container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
@@ -38,131 +33,100 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .logo {
-      font-weight: 700;
       font-size: 1.8rem;
-      color: white; /* white text for Orbit Eye */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-transform: none; /* normal case */
-    }
-    nav ul {
-      display: flex;
-      gap: 25px;
-    }
-    nav a {
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 8px 4px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    nav a.active,
-    nav a:hover {
-      color: #ffd500; /* bright yellow highlight */
-      border-bottom: 2px solid #ffd500;
+      font-weight: bold;
+      color: #FFFFFF;
     }
 
-    /* Mobile nav */
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.8rem;
-      color: #ffd500;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
     }
+
+    nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FFD500;
+    }
+
+    nav a.active {
+      color: #FFD500;
+      border-bottom: 2px solid #FFD500;
+    }
+
+    main {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #0B1F38;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    .job-section {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      background: #f9f9f9;
+    }
+
+    footer {
+      background: #0B1F38;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
-        background: #004aad;
+        gap: 10px;
+        background: #0B1F38;
         position: fixed;
         top: 60px;
         right: -100%;
         width: 200px;
         height: calc(100vh - 60px);
         padding: 20px;
-        gap: 15px;
         transition: right 0.3s ease;
-        z-index: 1001;
+        z-index: 2000;
       }
+
       nav ul.show {
         right: 0;
       }
+
       .menu-toggle {
         display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #FFD500;
       }
     }
 
-    /* Main container */
-    main.container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 40px auto;
-      flex: 1;
-    }
-    main h2 {
-      color: #004aad;
-      font-size: 2.2rem;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-    main p {
-      max-width: 800px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
-      color: #444;
-      line-height: 1.7;
-    }
-
-    /* Job listing cards */
-    .job-listings {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .job-card {
-      border: 1px solid #ccc;
-      padding: 25px;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      transition: box-shadow 0.3s ease;
-    }
-    .job-card:hover {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .job-card h3 {
-      color: #004aad;
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-    }
-    .job-card p {
-      color: #555;
-      margin-bottom: 15px;
-    }
-    .apply-btn {
-      display: inline-block;
-      background: #004aad;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-    .apply-btn:hover {
-      background: #ffd500;
-      color: #004aad;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #004aad;
-      color: white;
-      text-align: center;
-      padding: 25px 20px;
-      font-size: 0.9rem;
-      margin-top: auto;
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -184,29 +148,23 @@
     </div>
   </header>
 
-  <main class="container" role="main">
-    <h2>Join the Orbit Eye Team</h2>
-    <p>We’re looking for passionate and talented individuals to help us soar higher in the drone industry. Check out our current openings below and apply to become part of our dynamic team.</p>
+  <main>
+    <h2>Careers at Orbit Eye</h2>
+    <div class="job-section">
+      <h3>Drone Pilot</h3>
+      <p><strong>Location:</strong> Multiple cities</p>
+      <p><strong>Experience:</strong> 1+ year in drone operation preferred</p>
+      <p><strong>Skills:</strong> Drone flying, aerial videography, safety compliance</p>
+      <p><strong>Apply:</strong> Send your resume to <a href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
+    </div>
 
-    <section class="job-listings">
-      <article class="job-card">
-        <h3>Drone Operator</h3>
-        <p>Experienced drone pilots needed to capture aerial footage for real estate, weddings, and marketing projects.</p>
-        <a href="mailto:ashish.khokhar.kumar55@gmail.com?subject=Application for Drone Operator" class="apply-btn">Apply Now</a>
-      </article>
-
-      <article class="job-card">
-        <h3>Video Editor</h3>
-        <p>Creative video editors with skills in Adobe Premiere, After Effects, and drone footage editing wanted.</p>
-        <a href="mailto:ashish.khokhar.kumar55@gmail.com?subject=Application for Video Editor" class="apply-btn">Apply Now</a>
-      </article>
-
-      <article class="job-card">
-        <h3>Marketing Specialist</h3>
-        <p>Help us grow our brand with your digital marketing expertise focused on video and drone services.</p>
-        <a href="mailto:ashish.khokhar.kumar55@gmail.com?subject=Application for Marketing Specialist" class="apply-btn">Apply Now</a>
-      </article>
-    </section>
+    <div class="job-section">
+      <h3>Video Editor</h3>
+      <p><strong>Location:</strong> Work from home / In-office</p>
+      <p><strong>Experience:</strong> 1-3 years with editing software (Premiere Pro, Final Cut, etc.)</p>
+      <p><strong>Skills:</strong> Cinematic video creation, transitions, effects</p>
+      <p><strong>Apply:</strong> Send your portfolio to <a href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a></p>
+    </div>
   </main>
 
   <footer>
