@@ -2,30 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orbit Eye - Services</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: #ffffff;
-      color: #1a1a1a;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #ffd500;
     }
 
     header {
       background-color: #004aad;
-      color: #fff;
-      padding: 16px 0;
+      padding: 15px 0;
       position: sticky;
       top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
     }
 
     .container {
@@ -35,52 +43,44 @@
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
       color: #ffd500;
+      font-size: 1.8rem;
+      font-weight: bold;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 20px;
+      list-style: none;
+      gap: 25px;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px;
     }
 
-    nav a:hover,
-    nav a.active {
+    nav a.active,
+    nav a:hover {
       color: #ffd500;
       border-bottom: 2px solid #ffd500;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #ffd500;
+    .services-section {
+      padding: 60px 20px;
+      background: #f9f9f9;
     }
 
-    main {
-      padding: 60px 0;
-    }
-
-    h2 {
+    .services-section h2 {
       text-align: center;
-      font-size: 2.5rem;
       color: #004aad;
+      font-size: 2.2rem;
       margin-bottom: 40px;
     }
 
@@ -91,16 +91,16 @@
     }
 
     .service-card {
-      background: #f8f9fa;
-      padding: 30px 20px;
-      border-radius: 12px;
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
       border: 1px solid #ddd;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
     }
 
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .service-card h3 {
@@ -110,11 +110,12 @@
     }
 
     footer {
-      background-color: #004aad;
+      background: #004aad;
       color: #ffd500;
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9rem;
+      margin-top: 50px;
     }
 
     /* WhatsApp floating icon */
@@ -122,33 +123,49 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
       z-index: 999;
-    }
-
-    .whatsapp-float img {
-      width: 60px;
-      height: 60px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
       nav ul {
-        display: none;
         flex-direction: column;
         background: #004aad;
-        position: absolute;
+        position: fixed;
         top: 60px;
-        right: 0;
+        right: -100%;
         width: 200px;
+        height: calc(100vh - 60px);
         padding: 20px;
-        border-radius: 0 0 0 10px;
+        transition: right 0.3s ease;
+        z-index: 2000;
       }
 
       nav ul.show {
-        display: flex;
+        right: 0;
       }
 
       .menu-toggle {
         display: block;
+        font-size: 1.5rem;
+        color: #ffd500;
+        cursor: pointer;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
       }
     }
   </style>
@@ -159,74 +176,70 @@
     <div class="container">
       <nav>
         <div class="logo">ORBIT EYE</div>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         <ul id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="career.html">Career</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h2>Our Drone Services</h2>
-    <div class="services-grid">
+  <section class="services-section">
+    <div class="container">
+      <h2>Our Drone Services</h2>
+      <div class="services-grid">
 
-      <div class="service-card">
-        <h3>Real Estate Aerial Shoots</h3>
-        <p>Capture stunning aerial views of properties to enhance real estate listings and attract more buyers.</p>
+        <div class="service-card">
+          <h3>Real Estate Aerial Shoots</h3>
+          <p>Showcase properties from above with dynamic aerial views, perfect for real estate listings.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Wedding Drone Coverage</h3>
+          <p>Capture your special day from breathtaking angles with cinematic wedding drone videos.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Video Marketing Packages</h3>
+          <p>Enhance brand reach through creative drone-driven video content tailored for your business.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Construction Site Monitoring</h3>
+          <p>Monitor construction progress and ensure site efficiency with high-definition aerial surveys.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Survey & Mapping</h3>
+          <p>Leverage drone technology for precise 3D mapping, land surveys, and topographic insights.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Custom Drone Projects</h3>
+          <p>Need something unique? We design and execute specialized drone solutions for any purpose.</p>
+        </div>
+
       </div>
-
-      <div class="service-card">
-        <h3>Wedding Drone Coverage</h3>
-        <p>Make your wedding memorable with cinematic drone footage of the venue, guests, and special moments.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Video Marketing Packages</h3>
-        <p>Boost your brand presence with professional video packages including drone shots and creative edits.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Construction Site Monitoring</h3>
-        <p>Track progress with regular aerial footage of construction and infrastructure projects.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Survey & Mapping</h3>
-        <p>Use drone tech for topographic surveys, 3D mapping, and land measurement with precision.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Custom Drone Projects</h3>
-        <p>Have a unique requirement? We provide customized drone services tailored to your project goals.</p>
-      </div>
-
     </div>
-  </main>
+  </section>
 
   <footer>
     <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
     <p>Contact: +91-7217676818 | Email: ashish.khokhar.kumar55@gmail.com</p>
   </footer>
 
-  <!-- Floating WhatsApp icon -->
-  <div class="whatsapp-float">
-    <a href="https://wa.me/917217676818" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    </a>
-  </div>
+  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    &#x1F4AC;
+  </a>
 
   <script>
-    // Mobile menu toggle
-    const toggle = document.getElementById('menu-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-
-    toggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
   </script>
