@@ -4,84 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orbit Eye - Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
     }
-
     body {
       background: #fff;
       color: #222;
+      font-size: 16px;
       line-height: 1.6;
     }
-
     a {
+      color: #004aad;
       text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      transition: color 0.3s ease;
     }
-
     a:hover {
       color: #ffd500;
     }
-
-    header {
-      background-color: #004aad;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    ul {
+      list-style: none;
     }
-
+    button {
+      background: #004aad;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #ffd500;
+      color: #004aad;
+    }
     .container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
+      padding: 40px 0;
     }
 
-    .logo {
-      color: #ffd500;
-      font-size: 1.8rem;
-      font-weight: bold;
+    /* HEADER */
+    header {
+      background: #004aad;  /* Dark blue exactly like about.html */
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-family: 'Poppins', sans-serif;
     }
-
-    nav {
+    header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #ffd500;  /* Bright yellow like about.html */
+      font-family: 'Poppins', sans-serif;
+    }
     nav ul {
       display: flex;
-      list-style: none;
       gap: 25px;
     }
-
-    nav ul li a {
+    nav a {
       font-weight: 600;
       font-size: 1rem;
-      padding: 8px;
+      padding: 8px 4px;
+      color: white; /* white text */
+      transition: color 0.3s ease;
     }
-
     nav a.active,
     nav a:hover {
       color: #ffd500;
       border-bottom: 2px solid #ffd500;
-    }
-
-    .services-section {
-      padding: 60px 20px;
-      background: #f9f9f9;
-    }
-
-    .services-section h2 {
-      text-align: center;
-      color: #004aad;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
     }
 
     .services-grid {
@@ -89,20 +92,16 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
-
     .service-card {
-      background: white;
-      border-radius: 10px;
+      border: 1px solid #ccc;
       padding: 25px;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      border-radius: 10px;
+      transition: box-shadow 0.3s ease;
+      background-color: #f9f9f9;
     }
-
     .service-card:hover {
-      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
     .service-card h3 {
       color: #004aad;
       margin-bottom: 10px;
@@ -115,31 +114,36 @@
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9rem;
-      margin-top: 50px;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* WhatsApp floating icon */
+    /* Floating WhatsApp Icon */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 10000;
+      cursor: pointer;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-size: 28px;
-      z-index: 999;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      text-decoration: none;
+      justify-content: center;
+    }
+    .whatsapp-float:hover {
+      background-color: #128c7e;
     }
 
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
+        gap: 10px;
         background: #004aad;
         position: fixed;
         top: 60px;
@@ -150,19 +154,16 @@
         transition: right 0.3s ease;
         z-index: 2000;
       }
-
       nav ul.show {
         right: 0;
       }
-
       .menu-toggle {
         display: block;
+        cursor: pointer;
         font-size: 1.5rem;
         color: #ffd500;
-        cursor: pointer;
       }
     }
-
     @media (min-width: 769px) {
       .menu-toggle {
         display: none;
@@ -174,8 +175,8 @@
 
   <header>
     <div class="container">
+      <div class="logo">ORBIT EYE</div>
       <nav>
-        <div class="logo">ORBIT EYE</div>
         <ul id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -188,55 +189,57 @@
     </div>
   </header>
 
-  <section class="services-section">
-    <div class="container">
-      <h2>Our Drone Services</h2>
-      <div class="services-grid">
+  <main class="container" role="main">
+    <h2 style="text-align:center; font-size: 2.2rem; margin-bottom: 30px; color: #004aad;">Our Drone Services</h2>
+    <div class="services-grid">
 
-        <div class="service-card">
-          <h3>Real Estate Aerial Shoots</h3>
-          <p>Showcase properties from above with dynamic aerial views, perfect for real estate listings.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Wedding Drone Coverage</h3>
-          <p>Capture your special day from breathtaking angles with cinematic wedding drone videos.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Video Marketing Packages</h3>
-          <p>Enhance brand reach through creative drone-driven video content tailored for your business.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Construction Site Monitoring</h3>
-          <p>Monitor construction progress and ensure site efficiency with high-definition aerial surveys.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Survey & Mapping</h3>
-          <p>Leverage drone technology for precise 3D mapping, land surveys, and topographic insights.</p>
-        </div>
-
-        <div class="service-card">
-          <h3>Custom Drone Projects</h3>
-          <p>Need something unique? We design and execute specialized drone solutions for any purpose.</p>
-        </div>
-
+      <div class="service-card">
+        <h3>Real Estate Aerial Shoots</h3>
+        <p>Capture stunning aerial views of properties to enhance real estate listings and attract more buyers.</p>
       </div>
+
+      <div class="service-card">
+        <h3>Wedding Drone Coverage</h3>
+        <p>Make your wedding memorable with cinematic drone footage of the venue, guests, and special moments.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Video Marketing Packages</h3>
+        <p>Boost your brand presence with professional video packages including drone shots and creative edits.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Construction Site Monitoring</h3>
+        <p>Track progress with regular aerial footage of construction and infrastructure projects.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Survey & Mapping</h3>
+        <p>Use drone tech for topographic surveys, 3D mapping, and land measurement with precision.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Custom Drone Projects</h3>
+        <p>Have a unique requirement? We provide customized drone services tailored to your project goals.</p>
+      </div>
+
     </div>
-  </section>
+  </main>
+
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg style="width:28px; height:28px; fill:#fff;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M20.52 3.48a11.931 11.931 0 00-17 0 11.874 11.874 0 00-3.53 8.48c0 2.1.56 4.2 1.62 6.03l-1.7 5.84 6.02-1.64a11.92 11.92 0 005.87 1.47 11.92 11.92 0 008.49-3.52 11.932 11.932 0 000-17zm-8.44 15.14a9.206 9.206 0 01-5.04-1.57l-.37-.24-3.01.82.82-3.01-.24-.37a9.196 9.196 0 0115.84-6.42 9.196 9.196 0 01-6.18 15.29zm5.37-7.05c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.78.96-.96 1.15-.17.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.48-.9-.8-1.5-1.8-1.67-2.1-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.48-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.08-.8.37c-.27.3-1.04 1-1.04 2.46 0 1.46 1.06 2.87 1.2 3.07.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.61.7.2 1.34.17 1.85.1.57-.08 1.75-.7 2-1.37.25-.67.25-1.24.17-1.37-.07-.13-.27-.2-.57-.35z"/>
+    </svg>
+  </a>
 
   <footer>
     <p>&copy; 2025 Orbit Eye. All Rights Reserved.</p>
     <p>Contact: +91-7217676818 | Email: ashish.khokhar.kumar55@gmail.com</p>
   </footer>
 
-  <a href="https://wa.me/917217676818" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-    &#x1F4AC;
-  </a>
-
   <script>
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     menuToggle.addEventListener('click', () => {
