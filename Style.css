@@ -2,9 +2,10 @@ header {
   background-color: #003366; /* Dark blue */
   padding: 15px 30px;
   color: #FFD700; /* Yellow/gold */
-  position: sticky;
+  position: sticky;  /* sticks on top when scrolling */
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 .navbar {
   display: flex;
@@ -35,15 +36,4 @@ header {
 }
 .nav-links li a:hover {
   color: #FFFFFF;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 15px;
-    font-size: 16px;
-  }
-  .logo {
-    font-size: 24px;
-  }
 }
