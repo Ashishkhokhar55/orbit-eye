@@ -6,59 +6,137 @@
   <title>Orbit Eye | Drone Rental & Aerial Video Services</title>
   <meta name="description" content="Orbit Eye provides drone rental and aerial video services for real estate and weddings in India. Capture stunning drone visuals with us." />
   <style>
-    /* Reset & base */
-    body, html {
-      margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9; color: #222;
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #222;
     }
     a {
-      text-decoration: none; color: #0056b3;
+      text-decoration: none;
+      color: inherit;
     }
-    .container {
-      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+
+    /* Navigation */
+    header {
+      background-color: #003366;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    /* Hero */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links li a:hover {
+      color: #ffd600;
+    }
+
+    /* Hero Section */
     .hero {
-      position: relative; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      position: relative;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background: url('https://images.unsplash.com/photo-1623661734567-52cf1179e30d?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-      color: white; text-align: center; padding: 0 20px;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
     }
     .hero::after {
-      content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.5); z-index: 0;
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
     }
     .hero-content {
-      position: relative; z-index: 1;
+      position: relative;
+      z-index: 1;
       max-width: 800px;
     }
     .hero h1 {
-      font-size: 3.5rem; margin-bottom: 0.3rem; font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 0.3rem;
+      font-weight: 700;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
     .hero p {
-      font-size: 1.3rem; margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
     .btn-primary {
-      background-color: #007bff; color: white; padding: 12px 28px; font-weight: 600; border: none; border-radius: 5px;
-      cursor: pointer; transition: background-color 0.3s ease;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 28px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
       font-size: 1.1rem;
     }
     .btn-primary:hover {
       background-color: #0056b3;
     }
-    /* Section Titles */
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sections */
     h2.section-title {
-      font-size: 2.5rem; text-align: center; margin: 3rem 0 1.5rem;
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 3rem 0 1.5rem;
       color: #003366;
     }
-    /* Services Section */
+
     .services {
-      display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
       margin-bottom: 4rem;
     }
     .service-card {
-      background: white; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border-radius: 12px;
-      width: 350px; overflow: hidden; display: flex; flex-direction: column;
+      background: white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      width: 350px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.3s ease;
     }
     .service-card:hover {
@@ -66,81 +144,135 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
     .service-img {
-      width: 100%; height: 220px; object-fit: cover;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
     }
     .service-content {
       padding: 20px;
       flex-grow: 1;
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
     .service-content h3 {
-      margin-top: 0; margin-bottom: 0.8rem; color: #004080;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      color: #004080;
     }
     .service-content p {
-      flex-grow: 1; color: #555;
+      flex-grow: 1;
+      color: #555;
     }
-    .service-content .btn-secondary {
-      margin-top: 15px; background-color: #ffd600; border: none; padding: 10px 20px;
-      border-radius: 5px; cursor: pointer; font-weight: 600;
-      color: #222; transition: background-color 0.3s ease;
+    .btn-secondary {
+      margin-top: 15px;
+      background-color: #ffd600;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #222;
+      transition: background-color 0.3s ease;
       font-size: 1rem;
       text-align: center;
     }
-    .service-content .btn-secondary:hover {
+    .btn-secondary:hover {
       background-color: #e6c200;
     }
-    /* About Section */
+
     .about {
-      background: white; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       margin-bottom: 4rem;
-      max-width: 900px; margin-left: auto; margin-right: auto;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .about h2 {
-      text-align: center; color: #003366; margin-bottom: 1rem;
+      text-align: center;
+      color: #003366;
+      margin-bottom: 1rem;
     }
     .about p {
-      font-size: 1.1rem; color: #444; line-height: 1.6; text-align: center;
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.6;
+      text-align: center;
     }
-    /* FAQ */
+
     .faq-section {
-      max-width: 900px; margin: 0 auto 4rem;
-    }
-    .faq-section h2 {
-      text-align: center; color: #003366; margin-bottom: 2rem;
+      max-width: 900px;
+      margin: 0 auto 4rem;
     }
     .faq-item {
       margin-bottom: 1.3rem;
-      background: white; padding: 15px 20px; border-radius: 8px;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     }
     .faq-item h3 {
-      margin: 0; font-size: 1.1rem; color: #0056b3; cursor: pointer;
+      margin: 0;
+      font-size: 1.1rem;
+      color: #0056b3;
+      cursor: pointer;
     }
     .faq-item p {
-      margin: 0.5rem 0 0 0; color: #444;
+      margin: 0.5rem 0 0 0;
+      color: #444;
       display: none;
     }
     .faq-item.open p {
       display: block;
     }
+
     /* Responsive */
     @media(max-width: 768px) {
-      .services {
-        flex-direction: column; align-items: center;
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #003366;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 6px;
       }
-      .hero h1 {
-        font-size: 2.5rem;
+      .nav-links.active {
+        display: flex;
       }
-      .hero p {
-        font-size: 1.1rem;
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 1.5rem;
       }
-      .service-card {
-        width: 90%;
+    }
+    @media(min-width: 769px) {
+      .menu-toggle {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo" onclick="location.href='index.html'">Orbit Eye</div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="career.html">Career</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section class="hero" role="banner" aria-label="Drone aerial view of Delhi">
     <div class="hero-content">
@@ -154,33 +286,26 @@
 
     <h2 class="section-title">Our Services</h2>
     <div class="services">
-
-      <article class="service-card" role="region" aria-labelledby="real-estate-title">
-        <img
-          src="https://images.pexels.com/photos/4792492/pexels-photo-4792492.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=220&w=350"
-          alt="Drone aerial view of a white residential building" class="service-img" />
+      <article class="service-card">
+        <img src="https://images.pexels.com/photos/4792492/pexels-photo-4792492.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=220&w=350" alt="Drone view of a building" class="service-img">
         <div class="service-content">
-          <h3 id="real-estate-title">Real Estate Drone Shoots</h3>
+          <h3>Real Estate Drone Shoots</h3>
           <p>Showcase properties with stunning aerial shots. Perfect for builders, brokers, and developers.</p>
           <button class="btn-secondary" onclick="location.href='contact.html'">Get a Quote</button>
         </div>
       </article>
-
-      <article class="service-card" role="region" aria-labelledby="wedding-title">
-        <img
-          src="https://images.pexels.com/photos/931796/pexels-photo-931796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=220&w=350"
-          alt="Aerial photo of bride and groom at wedding ceremony" class="service-img" />
+      <article class="service-card">
+        <img src="https://images.pexels.com/photos/931796/pexels-photo-931796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=220&w=350" alt="Drone wedding photo" class="service-img">
         <div class="service-content">
-          <h3 id="wedding-title">Wedding Drone Coverage</h3>
+          <h3>Wedding Drone Coverage</h3>
           <p>Capture every magical moment from the sky — cinematic and memorable drone wedding videos.</p>
           <button class="btn-secondary" onclick="location.href='contact.html'">Get a Quote</button>
         </div>
       </article>
-
     </div>
 
-    <section class="about" role="region" aria-labelledby="about-title">
-      <h2 id="about-title">About Orbit Eye</h2>
+    <section class="about">
+      <h2>About Orbit Eye</h2>
       <p>
         Orbit Eye is your trusted partner for professional drone rental and aerial video services across India.
         We specialize in real estate marketing and wedding cinematography, delivering high-quality, creative drone footage to make your story stand out.
@@ -190,70 +315,62 @@
     <section class="faq-section" aria-label="Frequently Asked Questions">
       <h2>Frequently Asked Questions</h2>
 
-      <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq1" onclick="toggleFaq(this)" onkeypress="if(event.key==='Enter'){toggleFaq(this);}">
-        <h3 id="faq1">What areas do you serve?</h3>
+      <div class="faq-item">
+        <h3>What areas do you serve?</h3>
         <p>We operate across major cities in India, including Delhi, Mumbai, Bangalore, and more.</p>
       </div>
-
-      <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq2" onclick="toggleFaq(this)" onkeypress="if(event.key==='Enter'){toggleFaq(this);}">
-        <h3 id="faq2">Do I need a license to use your drone services?</h3>
-        <p>Our team holds all necessary certifications and complies with local drone regulations. You don’t need to worry about legal permissions.</p>
+      <div class="faq-item">
+        <h3>Do I need a license to use your drone services?</h3>
+        <p>Our team holds all necessary certifications and complies with local drone regulations.</p>
       </div>
-
-      <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq3" onclick="toggleFaq(this)" onkeypress="if(event.key==='Enter'){toggleFaq(this);}">
-        <h3 id="faq3">How long does a typical shoot last?</h3>
-        <p>Depending on your needs, shoots usually range from 1 to 3 hours for weddings and 1 to 2 hours for real estate properties.</p>
+      <div class="faq-item">
+        <h3>How long does a typical shoot last?</h3>
+        <p>Real estate shoots usually take 1–2 hours. Weddings range from 1–3 hours or more depending on the package.</p>
       </div>
-
-      <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq4" onclick="toggleFaq(this)" onkeypress="if(event.key==='Enter'){toggleFaq(this);}">
-        <h3 id="faq4">What resolutions do you offer for videos and photos?</h3>
-        <p>We provide 4K video quality and high-resolution photos to ensure your content looks crisp and professional.</p>
+      <div class="faq-item">
+        <h3>What resolutions do you offer?</h3>
+        <p>We provide 4K video and high-resolution photography to ensure top-quality visuals.</p>
       </div>
-
-      <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq5" onclick="toggleFaq(this)" onkeypress="if(event.key==='Enter'){toggleFaq(this);}">
-        <h3 id="faq5">How do I book a service?</h3>
-        <p>You can book by contacting us via our contact page or by clicking the "Book Now" button on the homepage.</p>
+      <div class="faq-item">
+        <h3>How do I book a service?</h3>
+        <p>You can book via the contact page or the "Book Now" button on our homepage.</p>
       </div>
-
-      <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq6" onclick="toggleFaq(this)" onkeypress="if(event.key==='Enter'){toggleFaq(this);}">
-        <h3 id="faq6">What equipment do you use?</h3>
-        <p>We use top-of-the-line drones including DJI Mavic series and Phantom series to capture stunning aerial footage.</p>
+      <div class="faq-item">
+        <h3>What equipment do you use?</h3>
+        <p>We use DJI drones like the Mavic and Phantom series for stunning aerial captures.</p>
       </div>
-
     </section>
-
   </main>
 
   <script>
-    function toggleFaq(element) {
-      const isOpen = element.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(faq => {
-        faq.classList.remove('open');
-        faq.setAttribute('aria-expanded', 'false');
+    // FAQ toggle
+    const faqItems = document.querySelectorAll('.faq-item h3');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('open');
       });
-      // Toggle clicked
-      if (!isOpen) {
-        element.classList.add('open');
-        element.setAttribute('aria-expanded', 'true');
+      item.addEventListener('keypress', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    menuToggle.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
       }
-    }
+    });
   </script>
 
 </body>
 </html>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo" onclick="location.href='index.html'">Orbit Eye</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="career.html">Career</a></li>
-      </ul>
-    </nav>
-  </header>
-
