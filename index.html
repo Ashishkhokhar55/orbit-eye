@@ -1,303 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orbit Eye | Drone Rental & Aerial Video Services</title>
-  <meta name="description" content="Orbit Eye provides drone rental and aerial video services for real estate and weddings in India." />
-  <meta name="keywords" content="drone rental, aerial videography, real estate drone, wedding drone, Orbit Eye, India drones, cinematic footage, drone photography" />
-  <meta name="author" content="Orbit Eye" />
-  <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph (Facebook, LinkedIn, etc) -->
-  <meta property="og:title" content="Orbit Eye | Drone Rental & Aerial Video Services">
-  <meta property="og:description" content="Professional drone rentals and aerial video services for real estate and weddings across India.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1623661734567-52cf1179e30d?auto=format&fit=crop&w=1350&q=80">
-  <meta property="og:url" content="https://orbit-eye.vercel.app/">
-  <meta property="og:type" content="website">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Orbit Eye | Drone Rental & Aerial Video Services">
-  <meta name="twitter:description" content="Capture breathtaking aerial views for weddings and real estate. Book Orbit Eye today!">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1623661734567-52cf1179e30d?auto=format&fit=crop&w=1350&q=80">
+<title>Orbit Eye | Premium Drone Cinematography & Aerial Solutions</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f8fb;
-      color: #222;
-    }
-    header {
-      background: #003366;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-    .navbar .logo {
-      color: #fff;
-      font-size: 1.8rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-    .nav-links li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-links li a:hover {
-      color: #ffd600;
-    }
+<meta name="description"
+content="Orbit Eye delivers premium drone cinematography, aerial photography, real estate drone marketing, luxury wedding films and commercial drone solutions across India.">
 
-    .hero {
-      background: url('https://images.unsplash.com/photo-1623661734567-52cf1179e30d?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-      color: white;
-      height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    .hero-content {
-      position: relative;
-      text-align: center;
-      z-index: 1;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-    .btn-primary {
-      background: #ffd600;
-      padding: 12px 30px;
-      font-weight: 600;
-      border: none;
-      border-radius: 5px;
-      color: #000;
-      cursor: pointer;
-    }
+<meta name="keywords"
+content="Drone Services, Drone Rental, Real Estate Drone, Wedding Drone, Aerial Photography, Orbit Eye, Commercial Drone India">
 
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+<meta name="author" content="Orbit Eye">
 
-    h2.section-title {
-      font-size: 2.5rem;
-      text-align: center;
-      color: #003366;
-      margin-bottom: 30px;
-    }
+<meta name="theme-color" content="#09131d">
 
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-    .service-card {
-      background: #fff;
-      width: 350px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-    }
-    .service-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-    .service-content {
-      padding: 20px;
-    }
-    .service-content h3 {
-      color: #004080;
-      margin-bottom: 10px;
-    }
-    .btn-secondary {
-      background: #ffd600;
-      padding: 10px 20px;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      margin-top: 15px;
-      cursor: pointer;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    .about {
-      background: #fff;
-      padding: 40px;
-      margin: 60px auto;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .faq-section {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .faq-item {
-      background: white;
-      padding: 15px 20px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    .faq-item h3 {
-      color: #0056b3;
-    }
-    .faq-item p {
-      display: none;
-      margin-top: 10px;
-      color: #444;
-    }
-    .faq-item.open p {
-      display: block;
-    }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #003366;
-      color: #fff;
-      margin-top: 60px;
-    }
+<style>
 
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .services {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+:root{
+
+--primary:#08111F;
+
+--secondary:#111827;
+
+--gold:#C9A227;
+
+--white:#ffffff;
+
+--light:#F5F7FA;
+
+--text:#d9dde5;
+
+--radius:18px;
+
+--transition:.4s;
+
+}
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:var(--primary);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+h1,h2,h3,h4{
+
+font-family:'Manrope',sans-serif;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:white;
+
+}
+
+section{
+
+padding:100px 8%;
+
+}
+
+.container{
+
+width:100%;
+
+max-width:1400px;
+
+margin:auto;
+
+}
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+background:rgba(10,16,25,.55);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+header.scrolled{
+
+background:#071019;
+
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}
+
+nav{
+
+height:85px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+color:white;
+
+}
+
+.logo span{
+
+color:var(--gold);
+
+}
+
+.menu{
+
+display:flex;
+
+gap:45px;
+
+align-items:center;
+
+}
+
+.menu a{
+
+font-size:15px;
+
+font-weight:600;
+
+position:relative;
+
+transition:.4s;
+
+}
+
+.menu a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-8px;
+
+left:0;
+
+width:0;
+
+height:2px;
+
+background:var(--gold);
+
+transition:.4s;
+
+}
+
+.menu a:hover{
+
+color:var(--gold);
+
+}
+
+.menu a:hover::after{
+
+width:100%;
+
+}
+
+.book-btn{
+
+padding:14px 34px;
+
+border-radius:40px;
+
+background:linear-gradient(135deg,#C9A227,#F5D547);
+
+color:#111;
+
+font-weight:700;
+
+transition:.4s;
+
+}
+
+.book-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(201,162,39,.45);
+
+}
+
+.hero{
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.hero video{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(90deg,
+rgba(5,10,15,.88),
+rgba(5,10,15,.60),
+rgba(5,10,15,.35));
+
+z-index:1;
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:760px;
+
+}
+
+.hero small{
+
+color:var(--gold);
+
+letter-spacing:4px;
+
+font-size:14px;
+
+font-weight:700;
+
+text-transform:uppercase;
+
+}
+
+.hero h1{
+
+font-size:72px;
+
+line-height:82px;
+
+margin:25px 0;
+
+font-weight:800;
+
+}
+
+.hero h1 span{
+
+color:var(--gold);
+
+}
+
+.hero p{
+
+font-size:20px;
+
+line-height:36px;
+
+color:#cfd6de;
+
+margin-bottom:40px;
+
+max-width:650px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:linear-gradient(135deg,#C9A227,#EFD05F);
+
+padding:18px 42px;
+
+border-radius:50px;
+
+font-weight:700;
+
+color:#111;
+
+transition:.4s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 45px rgba(201,162,39,.45);
+
+}
+
+.secondary-btn{
+
+padding:18px 42px;
+
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:50px;
+
+backdrop-filter:blur(20px);
+
+transition:.4s;
+
+}
+
+.secondary-btn:hover{
+
+background:white;
+
+color:#111;
+
+}
+
+.scroll-down{
+
+position:absolute;
+
+bottom:35px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:5;
+
+font-size:30px;
+
+animation:float 2s infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,10px);
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <header>
-    <nav class="navbar">
-      <div class="logo" onclick="location.href='index.html'">Orbit Eye</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="career.html">Career</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Capture the World from Above</h1>
-      <p>Professional Drone Rentals & Aerial Cinematography for Real Estate and Weddings</p>
-      <button class="btn-primary" onclick="location.href='contact.html'">Book Now</button>
-    </div>
-  </section>
+<div class="container">
 
-  <main>
-    <h2 class="section-title">Our Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <img src="https://images.pexels.com/photos/4792492/pexels-photo-4792492.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=220&w=350" class="service-img" alt="Real Estate">
-        <div class="service-content">
-          <h3>Real Estate Drone Shoots</h3>
-          <p>Showcase your property with high-quality aerial shots to attract buyers.</p>
-          <button class="btn-secondary" onclick="location.href='contact.html'">Get a Quote</button>
-        </div>
-      </div>
-      <div class="service-card">
-        <img src="https://images.pexels.com/photos/931796/pexels-photo-931796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=220&w=350" class="service-img" alt="Wedding">
-        <div class="service-content">
-          <h3>Wedding Drone Coverage</h3>
-          <p>Capture your special day with cinematic aerial footage and unforgettable moments.</p>
-          <button class="btn-secondary" onclick="location.href='contact.html'">Get a Quote</button>
-        </div>
-      </div>
-    </div>
+<nav>
 
-    <section class="about">
-      <h2>About Orbit Eye</h2>
-      <p>Orbit Eye delivers exceptional drone rental and aerial videography services in India. Our professional team ensures creative, safe, and high-resolution content for real estate and wedding events. Let your story unfold from the sky.</p>
-    </section>
+<div class="logo">
 
-    <section class="faq-section">
-      <h2 class="section-title">FAQs</h2>
+Orbit <span>Eye</span>
 
-      <div class="faq-item">
-        <h3>What areas do you serve?</h3>
-        <p>We operate across major cities like Delhi, Mumbai, Bangalore, and more.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do I need a drone license?</h3>
-        <p>No, our certified team handles all legal drone operations on your behalf.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What quality can I expect?</h3>
-        <p>We deliver high-resolution 4K video and sharp, clear aerial photography.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How can I book your service?</h3>
-        <p>Use the "Contact" or "Book Now" buttons to get started easily.</p>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <footer>
-    &copy; 2025 Orbit Eye. All rights reserved.
-  </footer>
+<div class="menu">
 
-  <script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('open');
-      });
-    });
-  </script>
+<a href="#">Home</a>
 
-</body>
-</html>
+<a href="#">About</a>
+
+<a href="#">Services</a>
+
+<a href="#">Portfolio</a>
+
+<a href="#">Gallery</a>
+
+<a href="#">Contact</a>
+
+<a href="#" class="book-btn">Book Now</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+
+<source src="videos/drone.mp4" type="video/mp4">
+
+</video>
+
+<div class="container">
+
+<div class="hero-content">
+
+<small>Premium Drone Cinematography</small>
+
+<h1>
+Elevating <span>Perspectives</span><br>
+Creating Extraordinary Stories.
+</h1>
+
+<p>
+Orbit Eye delivers luxury drone cinematography,
+aerial photography and cinematic storytelling
+for real estate, luxury villas, hotels,
+commercial projects and unforgettable weddings.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="primary-btn">
+
+Book Your Shoot
+
+</a>
+
+<a href="#" class="secondary-btn">
+
+Explore Portfolio
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="scroll-down">
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+</section>
+<!-- =========================
+PREMIUM STATS SECTION
+========================== -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+
+<h2>500+</h2>
+
+<p>Projects Delivered</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>350+</h2>
+
+<p>Happy Clients</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>4K</h2>
+
+<p>Ultra HD Cinematic Output</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>24×7</h2>
+
+<p>Support Available</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+WHY ORBIT EYE
+========================== -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h5>WHY CHOOSE US</h5>
+
+<h2>Elevating Stories From Every Angle</h2>
+
+<p>
+
+We combine creativity, technology and precision
+to produce breathtaking aerial visuals that
+leave a lasting impression.
+
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<i class="fa-solid fa-drone"></i>
+
+<h3>Latest DJI Fleet</h3>
+
+<p>
+
+Professional drones equipped with
+4K & 5.1K cinematic cameras.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-medal"></i>
+
+<h3>Certified Pilots</h3>
+
+<p>
+
+Licensed operators ensuring
+safe and legal drone operations.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-film"></i>
+
+<h3>Cinematic Production</h3>
+
+<p>
+
+Professional color grading,
+editing and storytelling.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h3>Fast Delivery</h3>
+
+<p>
+
+Quick turnaround without
+compromising quality.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SERVICES
+========================== -->
+
+<section class="services">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h5>OUR SERVICES</h5>
+
+<h2>Premium Drone Solutions</h2>
+
+<p>
+
+Designed for luxury brands,
+real estate developers,
+weddings and commercial productions.
+
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<img src="images/real-estate.jpg">
+
+<div class="overlay">
+
+<h3>Real Estate</h3>
+
+<p>
+
+Luxury aerial marketing
+for villas, apartments,
+townships and commercial buildings.
+
+</p>
+
+<a href="#">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="images/wedding.jpg">
+
+<div class="overlay">
+
+<h3>Wedding Films</h3>
+
+<p>
+
+Create unforgettable
+cinematic wedding memories.
+
+</p>
+
+<a href="#">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="images/hotel.jpg">
+
+<div class="overlay">
+
+<h3>Hotels & Resorts</h3>
+
+<p>
+
+Luxury hospitality
+marketing from the sky.
+
+</p>
+
+<a href="#">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="service-card">
+
+<img src="images/construction.jpg">
+
+<div class="overlay">
+
+<h3>Construction Monitoring</h3>
+
+<p>
+
+Track project progress
+with accurate aerial reports.
+
+</p>
+
+<a href="#">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/*=============================
+STATS
+=============================*/
+
+.stats{
+
+background:#0D1727;
+
+padding:90px 8%;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+.stat-box{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+padding:40px;
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+.stat-box:hover{
+
+transform:translateY(-10px);
+
+border-color:#C9A227;
+
+}
+
+.stat-box h2{
+
+font-size:56px;
+
+color:#C9A227;
+
+margin-bottom:10px;
+
+font-family:Manrope;
+
+}
+
+.stat-box p{
+
+font-size:17px;
+
+color:#ddd;
+
+}
+
+/*=============================
+SECTION TITLE
+=============================*/
+
+.section-heading{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-heading h5{
+
+color:#C9A227;
+
+letter-spacing:3px;
+
+font-size:15px;
+
+margin-bottom:20px;
+
+}
+
+.section-heading h2{
+
+font-size:52px;
+
+margin-bottom:20px;
+
+font-family:Manrope;
+
+}
+
+.section-heading p{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:18px;
+
+line-height:34px;
+
+color:#cfd6de;
+
+}
+
+/*=============================
+WHY US
+=============================*/
+
+.why{
+
+background:#08111F;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:35px;
+
+}
+
+.why-card{
+
+padding:45px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-12px);
+
+border-color:#C9A227;
+
+}
+
+.why-card i{
+
+font-size:48px;
+
+color:#C9A227;
+
+margin-bottom:25px;
+
+}
+
+.why-card h3{
+
+margin-bottom:18px;
+
+font-size:24px;
+
+}
+
+.why-card p{
+
+color:#cfd6de;
+
+line-height:30px;
+
+}
+
+/*=============================
+SERVICES
+=============================*/
+
+.service-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:40px;
+
+}
+
+.service-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:25px;
+
+height:450px;
+
+}
+
+.service-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.7s;
+
+}
+
+.service-card:hover img{
+
+transform:scale(1.1);
+
+}
+
+.overlay{
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+padding:40px;
+
+background:linear-gradient(transparent,#000);
+
+}
+
+.overlay h3{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.overlay p{
+
+line-height:30px;
+
+margin-bottom:25px;
+
+color:#ddd;
+
+}
+
+.overlay a{
+
+display:inline-block;
+
+padding:14px 30px;
+
+border-radius:40px;
+
+background:#C9A227;
+
+color:#111;
+
+font-weight:700;
+
+}
+
+@media(max-width:991px){
+
+.stats-grid,
+.why-grid,
+.service-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
