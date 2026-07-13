@@ -1,39 +1,580 @@
-header {
-  background-color: #003366; /* Dark blue */
-  padding: 15px 30px;
-  color: #FFD700; /* Yellow/gold */
-  position: sticky;  /* sticks on top when scrolling */
-  top: 0;
-  z-index: 1000;
-  width: 100%;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',Arial,sans-serif;
 }
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
+
+
+body{
+    background:#ffffff;
+    color:#222;
+    line-height:1.6;
 }
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
+
+
+html{
+    scroll-behavior:smooth;
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+
+
+/* HEADER */
+
+header{
+
+    width:100%;
+    height:80px;
+    background:#003366;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
 }
-.nav-links li a {
-  color: #FFD700;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  transition: color 0.3s ease;
+
+
+.logo{
+
+    font-size:32px;
+    font-weight:700;
+    color:white;
 }
-.nav-links li a:hover {
-  color: #FFFFFF;
+
+
+.logo span{
+
+    color:#FFD500;
+
+}
+
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+    color:#FFD500;
+
+}
+
+
+
+
+.nav-btn{
+
+    background:#FFD500;
+    color:#003366;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+height:90vh;
+
+background:
+
+linear-gradient(
+rgba(0,20,50,.65),
+rgba(0,20,50,.65)
+),
+
+url("images/drone-hero.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+padding:0 8%;
+
+}
+
+
+
+.hero-content{
+
+max-width:700px;
+color:white;
+
+}
+
+
+
+.hero h1{
+
+font-size:60px;
+line-height:1.1;
+margin-bottom:20px;
+
+}
+
+
+
+.hero p{
+
+font-size:20px;
+margin-bottom:35px;
+
+}
+
+
+
+.hero-buttons a{
+
+display:inline-block;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+margin-right:15px;
+font-weight:600;
+
+}
+
+
+
+.primary-btn{
+
+background:#FFD500;
+color:#003366;
+
+}
+
+
+
+.secondary-btn{
+
+border:2px solid white;
+color:white;
+
+}
+
+
+
+
+/* SECTION COMMON */
+
+
+section{
+
+padding:80px 8%;
+
+}
+
+
+
+.section-heading{
+
+text-align:center;
+margin-bottom:50px;
+
+}
+
+
+.section-heading h2,
+.section-title h2{
+
+font-size:40px;
+color:#003366;
+margin-bottom:15px;
+
+}
+
+
+
+.section-heading p,
+.section-title p{
+
+font-size:18px;
+color:#555;
+
+}
+
+
+
+
+
+
+
+/* SERVICES */
+
+
+.service-container{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+
+.service-card{
+
+background:white;
+padding:35px;
+border-radius:15px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.1);
+
+transition:.4s;
+
+}
+
+
+
+.service-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.service-card h3{
+
+color:#003366;
+margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+
+/* WHY */
+
+
+.why{
+
+background:#f5f8fc;
+
+}
+
+
+
+.features{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+
+}
+
+
+
+.features div{
+
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+
+}
+
+
+
+.features h3{
+
+color:#003366;
+
+}
+
+
+
+
+
+
+
+
+/* PORTFOLIO */
+
+
+.portfolio-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.portfolio-box{
+
+height:250px;
+
+background:
+
+linear-gradient(
+rgba(0,51,102,.7),
+rgba(0,51,102,.7)
+),
+
+url("images/drone-project.jpg");
+
+background-size:cover;
+
+border-radius:15px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+color:white;
+
+transition:.4s;
+
+}
+
+
+
+.portfolio-box:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+
+/* PRICING */
+
+
+.pricing{
+
+background:#f5f8fc;
+
+}
+
+
+.price-container{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+.price-card{
+
+background:white;
+padding:40px;
+text-align:center;
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.1);
+
+}
+
+
+
+.price-card h3{
+
+color:#003366;
+
+}
+
+
+
+.price-card h2{
+
+font-size:40px;
+color:#FFD500;
+margin:20px 0;
+
+}
+
+
+
+.premium{
+
+border:3px solid #FFD500;
+
+}
+
+
+
+
+
+
+
+/* CTA */
+
+
+.cta{
+
+background:#003366;
+text-align:center;
+color:white;
+
+}
+
+
+
+.cta h2{
+
+font-size:40px;
+margin-bottom:30px;
+
+}
+
+
+
+.cta a{
+
+background:#FFD500;
+color:#003366;
+
+padding:15px 35px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#001a33;
+color:white;
+text-align:center;
+padding:40px 8%;
+
+}
+
+
+
+footer a{
+
+color:white;
+margin:10px;
+text-decoration:none;
+
+}
+
+
+
+
+/* WHATSAPP */
+
+
+.whatsapp{
+
+position:fixed;
+
+right:25px;
+bottom:25px;
+
+background:#FFD500;
+color:#003366;
+
+padding:15px 25px;
+
+border-radius:40px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+z-index:999;
+
+}
+
+
+
+
+
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media(max-width:900px){
+
+
+header{
+
+padding:0 5%;
+
+}
+
+
+nav{
+
+display:none;
+
+}
+
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+
+
+.service-container,
+.features,
+.portfolio-grid,
+.price-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+section{
+
+padding:60px 5%;
+
+}
+
+
 }
