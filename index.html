@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbit Eyee | Premium Drone Photography &amp; Aerial Videography</title>
+<meta name="description" content="Orbit Eyee provides professional drone photography and cinematic aerial videography for real estate, weddings, events and businesses.">
+<meta name="theme-color" content="#003366">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="Style.css">
+<style>
+:root{--navy:#062f5e;--yellow:#ffd000;--ink:#101827;--muted:#45556b}
+body{font-size:14px;line-height:1.45;color:var(--ink)}
+.container{width:min(820px,84%);margin-inline:auto}
+.site-header{position:relative;background:#062f5e;box-shadow:none;border-bottom:1px solid rgba(255,255,255,.2)}
+.header-inner{min-height:54px;gap:18px}
+.logo{font-size:1.2rem;line-height:1;letter-spacing:-.04em}
+.logo:before{content:"◉";display:inline-grid;place-items:center;width:28px;height:28px;border:3px solid var(--yellow);border-radius:50%;margin-right:5px;color:var(--yellow);font-size:17px}
+nav ul{gap:2px}nav a{font-size:11px;padding:8px 10px;border-radius:0}
+nav a:hover,nav a.active{background:none;color:var(--yellow);box-shadow:inset 0 -2px var(--yellow)}
+.header-book{font-size:10px;padding:8px 16px;white-space:nowrap}
+.hero{min-height:285px;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.72) 34%,rgba(255,255,255,.03) 70%),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90') center 55%/cover no-repeat;color:var(--ink)}
+.hero:after{display:none}.hero-inner{padding:36px 0 40px;max-width:none}
+.hero .eyebrow{font-size:10px;letter-spacing:.09em;color:#0b2b50;margin-bottom:5px}
+.hero .eyebrow:before{display:none}.hero h1{font-size:clamp(2rem,3.3vw,2.55rem);line-height:1.08;letter-spacing:-.035em;max-width:380px;margin:0 0 8px;color:#111827}
+.hero p{font-size:12px;line-height:1.5;color:#172033;max-width:390px;margin:0 0 20px}
+.hero-actions{gap:10px}.hero .btn{font-size:10px;padding:9px 18px}
+.hero .btn-outline{background:#fff;border-color:#aab5c4;color:#10213b}
+section.section{padding:23px 0}
+.section-head{max-width:none;text-align:left;margin:0 0 15px}
+.section-head .eyebrow{font-size:8px;color:#17375f;letter-spacing:.06em;margin-bottom:3px}
+.section-head .eyebrow:before{width:27px;background:var(--yellow)}
+.section-head h2{font-size:21px;letter-spacing:-.025em;margin:0 0 3px}
+.section-head p{font-size:10px;margin:0;color:#40506a}
+.home-services .section-head{position:relative;padding-right:100px}
+.home-services .section-head:after{content:"View All Services  →";position:absolute;right:0;top:18px;color:#102a4a;font-size:9px;font-weight:700}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.home-services .card{padding:0;border-radius:7px;box-shadow:0 2px 9px rgba(0,35,75,.04);border-color:#e7ebf1}
+.service-photo{height:105px;object-fit:cover}
+.service-card-body{padding:0 12px 10px;position:relative}
+.service-card-body .icon-box{width:32px;height:32px;border-radius:50%;margin-top:-17px;margin-bottom:7px;position:relative;border:1px solid #ffe45d;background:var(--yellow);font-size:15px}
+.service-card-body h3{font-size:12px;margin-bottom:5px}
+.service-card-body p{font-size:10px;line-height:1.4;margin-bottom:6px;color:#435168}
+.card-link{font-size:9px}
+.section-soft{background:#f4f6f9}
+.section-soft .section-head{margin-bottom:14px}
+.feature-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.feature{border:0;box-shadow:none;background:transparent;border-radius:0;text-align:center;padding:12px 3px 0}
+.feature h3{font-size:10px;margin:0 0 4px}.feature p{font-size:9px;line-height:1.35}
+.stats-strip{display:none}
+#why .feature{padding-top:10px}
+.why-layout{display:grid;grid-template-columns:1.2fr .8fr;align-items:stretch;gap:18px}
+.why-visual{min-height:175px;background:linear-gradient(90deg,rgba(0,44,82,.05),rgba(0,44,82,.02)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85') center/cover;border-left:8px solid var(--yellow);display:flex;align-items:end;padding:18px;color:white;font-weight:800;font-size:17px;text-shadow:0 2px 8px #001a33}
+.why-visual span{display:block;color:var(--yellow);font-style:italic}
+.process-section .section-head{margin-bottom:10px}
+.process-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.process-step{display:flex;gap:9px;align-items:flex-start}
+.process-step b{flex:none;width:29px;height:29px;display:grid;place-items:center;background:var(--yellow);border-radius:50%;font-size:10px}
+.process-step h3{font-size:9px;margin:4px 0 5px}.process-step p{font-size:8px;line-height:1.35;color:#4b5870;margin:0}
+.process-row .btn{font-size:9px;padding:8px 12px}
+.contact-strip{background:linear-gradient(90deg,rgba(255,225,189,.88),rgba(255,255,255,.64)),url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85') center/cover;padding:18px 0}
+.contact-strip-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}
+.contact-strip h2{font-size:17px;margin:2px 0 4px}.contact-strip p{font-size:10px;margin-bottom:9px}
+.contact-details{display:flex;gap:12px;flex-wrap:wrap;font-size:9px;font-weight:700}
+.contact-details span:before{content:"●";color:#d6a900;margin-right:5px}
+.quick-form{background:rgba(255,255,255,.95);border:1px solid #dce2eb;border-radius:5px;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.quick-form label{font-size:8px;font-weight:700;color:#29374c}
+.quick-form input,.quick-form textarea{width:100%;border:1px solid #d8e0e9;border-radius:4px;padding:7px;font:9px Arial;margin-top:3px}
+.quick-form .full{grid-column:1/-1}.quick-form textarea{height:35px;resize:vertical}
+.quick-form button{grid-column:1/-1;border:0;border-radius:4px;background:var(--yellow);padding:8px;font-size:9px;font-weight:800;cursor:pointer}
+footer{background:#062f5e;color:#fff;padding:10px 0 7px}
+.footer-top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.14)}
+footer .logo{font-size:1rem;margin-bottom:3px;display:inline-block}footer p{font-size:7px;line-height:1.3;margin:0;color:#dce8f6}
+.footer-nav{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}.footer-nav a,.footer-social a,.footer-bottom a{font-size:8px;color:#fff;text-decoration:none}
+.footer-nav a:hover,.footer-bottom a:hover{color:var(--yellow)}
+.footer-social{display:flex;align-items:center;gap:10px}.footer-social a{font-size:11px;font-weight:800;min-width:13px;text-align:center}
+.footer-bottom{display:flex;justify-content:space-between;gap:12px;padding-top:7px;font-size:8px;color:#dce8f6}.footer-legal{display:flex;gap:12px}
+@media(max-width:700px){.footer-top{align-items:flex-start;flex-wrap:wrap}.footer-nav{justify-content:flex-start;order:3;width:100%;gap:10px}.footer-social{margin-left:auto}.footer-bottom{flex-direction:column;gap:5px}.footer-legal{gap:12px}}
+.whatsapp-button{width:38px;height:38px;right:14px;bottom:14px}
+@media(max-width:700px){
+ .container{width:min(92%,560px)}.header-inner{min-height:58px;flex-wrap:wrap;gap:8px;padding:8px 0}
+ .logo{font-size:1.1rem}.menu-toggle{display:block;margin-left:auto}
+ nav{order:3;width:100%}nav ul{display:none;flex-direction:column;align-items:stretch;background:#062f5e;padding:8px 0}
+ nav ul.show{display:flex}nav a{padding:9px 12px}.header-book{padding:8px 12px}
+ .hero{min-height:340px;background-position:60% center}.hero-inner{padding:32px 0}
+ .hero h1{font-size:2.1rem;max-width:320px}.hero p{max-width:310px}
+ .grid{grid-template-columns:1fr;gap:12px}.service-photo{height:160px}
+ .service-card-body{padding:0 14px 13px}.service-card-body h3{font-size:14px}.service-card-body p{font-size:11px}
+ .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.why-layout{grid-template-columns:1fr}
+ .why-visual{min-height:150px}.process-row{grid-template-columns:1fr 1fr;gap:15px}
+ .contact-strip-inner{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}.footer-top>div:first-child{grid-column:1/-1}
+ .home-services .section-head{padding-right:0}.home-services .section-head:after{position:static;display:block;margin-top:8px}
+}
+@media(max-width:390px){.process-row{grid-template-columns:1fr}.hero-actions .btn{padding:9px 12px}.footer-top{grid-template-columns:1fr}}
+
+/* Orbit Eyee shared header/footer — identical sizing on every page */
+.site-header{background:#062f5e!important;color:#fff!important;box-shadow:none!important;border-bottom:1px solid rgba(255,255,255,.18)}
+.site-header .header-inner{min-height:62px!important;gap:18px!important}
+.site-header .logo{display:inline-flex;align-items:center;font-size:1.25rem!important;line-height:1!important;letter-spacing:-.035em!important;color:#fff!important}
+.site-header .logo:before{content:""!important;display:inline-block!important;flex:0 0 28px;width:28px;height:28px;margin-right:9px;border:2px solid #ffd000;border-radius:50%;background:radial-gradient(circle at 50% 50%,#ffd000 0 3px,transparent 3.5px),linear-gradient(35deg,transparent 44%,#ffd000 46% 50%,transparent 52%),linear-gradient(145deg,transparent 44%,#ffd000 46% 50%,transparent 52%);box-shadow:inset 0 0 0 4px #062f5e, inset 0 0 0 5px rgba(255,208,0,.65)}
+.site-header .logo span{color:#ffd000!important}
+.site-header nav ul{gap:3px!important}
+.site-header nav a{font-size:.84rem!important;padding:9px 10px!important;color:#fff!important}
+.site-header nav a:hover,.site-header nav a.active{color:#ffd000!important;background:rgba(255,255,255,.08)!important}
+.site-header .header-book{padding:9px 15px!important;font-size:.82rem!important;white-space:nowrap}
+footer{background:#062f5e!important;color:#fff!important;padding:12px 0 8px!important}
+footer .footer-top{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;padding-bottom:9px!important;border-bottom:1px solid rgba(255,255,255,.14)!important}
+footer .footer-brand{flex:0 1 auto!important;min-width:190px}
+footer .logo{font-size:1rem!important;line-height:1.1!important;letter-spacing:-.03em!important;margin-bottom:3px!important;display:inline-flex!important;align-items:center!important;color:#fff!important;text-decoration:none!important}
+footer .logo:before{display:none!important;content:none!important}
+footer .logo span:last-child{color:#ffd000!important}
+footer .footer-drone-mark{display:inline-grid!important;place-items:center!important;width:27px!important;height:27px!important;border:2px solid #ffd000!important;border-radius:50%!important;margin-right:5px!important;color:#ffd000!important;font-size:15px!important}
+footer p{font-size:7px!important;line-height:1.3!important;margin:0!important;color:#dce8f6!important;max-width:none!important}
+footer .footer-contact{display:flex;flex-direction:column;gap:2px;margin-top:5px}
+footer .footer-contact a{font-size:8px!important;line-height:1.35;color:#dce8f6!important;text-decoration:none;overflow-wrap:anywhere}
+footer .footer-contact a:hover{color:#ffd000!important}
+footer .footer-nav{display:flex!important;align-items:center!important;justify-content:center!important;gap:12px!important;flex-wrap:wrap!important}
+footer .footer-nav a,footer .footer-social a,footer .footer-bottom a{font-size:8px!important;color:#fff!important;text-decoration:none!important}
+footer .footer-nav a:hover,footer .footer-bottom a:hover{color:#ffd000!important}
+footer .footer-social{display:flex!important;align-items:center!important;gap:10px!important;flex-shrink:0}
+footer .footer-social a{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:16px!important;height:16px!important;font-weight:800}
+footer .footer-social svg{display:block!important;width:14px!important;height:14px!important}
+footer .footer-bottom{border-top:0!important;padding-top:7px!important;display:flex!important;justify-content:space-between!important;gap:12px!important;flex-wrap:wrap!important;font-size:8px!important;color:#dce8f6!important}
+footer .footer-legal{display:flex;gap:12px}
+@media(max-width:850px){.site-header .header-inner{min-height:60px!important;flex-wrap:wrap!important;padding-top:8px;padding-bottom:8px}.site-header nav ul{gap:0!important}.site-header nav a{padding:8px 7px!important;font-size:.78rem!important}footer .footer-top{align-items:flex-start!important;flex-wrap:wrap!important}footer .footer-nav{justify-content:flex-start!important;order:3;width:100%;gap:10px!important}footer .footer-social{margin-left:auto}footer .footer-bottom{flex-direction:column;gap:5px}footer .footer-legal{gap:12px}}
+@media(max-width:680px){.site-header .header-inner{min-height:58px!important;display:flex!important;flex-wrap:nowrap!important}.site-header .logo{font-size:1.05rem!important}.site-header .logo:before{flex-basis:24px;width:24px;height:24px;margin-right:6px}.site-header .menu-toggle{display:block!important}.site-header nav{margin-left:auto}.site-header nav ul{display:none!important;position:absolute;top:100%;left:0;right:0;background:#062f5e;padding:10px 5%!important;flex-direction:column!important;align-items:stretch!important}.site-header nav ul.show{display:flex!important}.site-header nav a{font-size:.9rem!important;padding:10px!important}.site-header .header-book{padding:8px 10px!important;font-size:.75rem!important}footer .footer-top{gap:12px!important}footer .footer-brand{min-width:0;max-width:100%}footer .footer-contact a{font-size:8px!important}}
+
+
+/* Mobile header alignment fix: keep the brand left and controls grouped on the right. */
+@media (max-width:680px){
+ .site-header .header-inner{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;min-height:58px!important;padding-top:6px!important;padding-bottom:6px!important}
+ .site-header .header-inner>.logo{flex:0 1 auto!important;min-width:0!important;margin-right:auto!important;font-size:1.02rem!important}
+ .site-header .header-inner>nav{display:flex!important;flex:0 0 auto!important;width:auto!important;min-width:0!important;margin:0!important;order:2!important;position:static!important}
+ .site-header .menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:34px!important;height:34px!important;padding:0!important;margin:0!important;border-radius:8px!important;font-size:1.05rem!important;line-height:1!important;flex:0 0 34px!important}
+ .site-header .header-inner>.header-book{flex:0 0 auto!important;order:3!important;margin-left:0!important;padding:8px 10px!important;font-size:.72rem!important;white-space:nowrap!important}
+ .site-header nav ul{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;width:100%!important;background:#062f5e!important;padding:10px 5%!important;flex-direction:column!important;align-items:stretch!important;z-index:1001!important}
+ .site-header nav ul.show{display:flex!important}
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Orbit Eyee home">Orbit <span>Eyee</span></a>
+    <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="career.html">Career</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary header-book" href="contact.html">Book Now <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-inner">
+  <span class="eyebrow">Professional drone services</span>
+  <h1>Capture More<br>Than Just Photos</h1>
+  <p>Stunning aerial photography &amp; videography for<br class="desktop-break"> Real Estate, Weddings, Events and Corporate shoots.</p>
+  <div class="hero-actions">
+   <a class="btn btn-primary" href="contact.html">Book Now&nbsp; →</a>
+   <a class="btn btn-outline" href="https://wa.me/?text=Hello%20Orbit%20Eyee%2C%20I%20would%20like%20to%20book%20a%20drone%20shoot." target="_blank" rel="noopener">☏ Chat on WhatsApp</a>
+  </div>
+ </div>
+</section>
+
+<section class="section home-services">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">What we do</span><h2>Specialised Drone Solutions</h2><p>We bring your vision to life with stunning aerial perspectives and cinematic quality.</p></div>
+  <div class="grid">
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Modern luxury home and landscaped property" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">⌂</div><h3>Real Estate Drone Photography</h3><p>Showcase luxury properties, villas, apartments and commercial spaces with compelling aerial visuals.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Elegant wedding ceremony setup" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">✦</div><h3>Wedding Drone Cinematography</h3><p>Capture venue views, grand entrances and unforgettable celebrations from a cinematic perspective.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85" alt="Live event with stage lighting and audience" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">◈</div><h3>Events &amp; Celebrations</h3><p>Professional aerial coverage for family functions, parties, concerts and special occasions.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section section-soft" id="why">
+ <div class="container why-layout">
+  <div><div class="section-head"><span class="eyebrow">Why choose us?</span><h2>Why Choose Orbit Eyee?</h2><p>Professional. Reliable. Creative.</p></div>
+   <div class="feature-grid">
+    <div class="feature"><h3>◉</h3><p>High-Quality<br>4K Footage</p></div>
+    <div class="feature"><h3>♢</h3><p>Experienced<br>Drone Pilots</p></div>
+    <div class="feature"><h3>⚙</h3><p>Latest Drone<br>Technology</p></div>
+    <div class="feature"><h3>◷</h3><p>On-Time<br>Delivery</p></div>
+    <div class="feature"><h3>☆</h3><p>Customised<br>Packages</p></div>
+   </div>
+  </div>
+  <div class="why-visual">Your Vision<br><span>Our Flight</span></div>
+ </div>
+</section>
+
+<section class="section process-section">
+ <div class="container"><div class="section-head"><span class="eyebrow">How it works</span><h2>Our Process</h2><p>Simple steps to get your perfect aerial shots.</p></div>
+  <div class="process-row">
+   <div class="process-step"><b>01</b><div><h3>Share Your Requirements</h3><p>Tell us about your project and vision.</p></div></div>
+   <div class="process-step"><b>02</b><div><h3>Get a Custom Quote</h3><p>We'll share the best package for your needs.</p></div></div>
+   <div class="process-step"><b>03</b><div><h3>Schedule the Shoot</h3><p>Choose a date and time that works for you.</p></div></div>
+   <div class="process-step"><b>04</b><div><h3>Receive Your Content</h3><p>Get high-quality photos and videos, ready to use.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section section-soft">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">A glimpse of our work</span><h2>Explore Our Aerial Creations</h2><p>Visual inspiration across property, celebrations, events and cityscapes.</p></div>
+  <div class="photo-grid">
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85" alt="Contemporary luxury property" loading="lazy"><span>Real Estate</span></a>
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=85" alt="Wedding reception decorations" loading="lazy"><span>Weddings</span></a>
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=85" alt="Crowd at a live music event" loading="lazy"><span>Events</span></a>
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=85" alt="City skyline at dusk" loading="lazy"><span>Corporate &amp; Cityscapes</span></a>
+  </div>
+  <div class="text-center mt-24"><a class="btn btn-navy" href="gallery.html">View Full Gallery ↗</a></div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Why clients choose us</span><h2>Thoughtful Planning. Memorable Results.</h2></div>
+  <div class="testimonial"><blockquote>“Every project deserves a perspective that makes it stand out. Orbit Eyee brings creative thinking, clear communication and careful planning to aerial visual storytelling.”</blockquote><cite>Orbit Eyee — Our service promise</cite></div>
+ </div>
+</section>
+
+<section class="section section-soft">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Frequently asked questions</span><h2>Before You Book</h2></div>
+  <div class="faq-grid">
+   <article class="faq-item"><h3>What types of projects do you cover?</h3><p>Real estate, weddings, private celebrations, events, corporate projects and promotional content.</p></article>
+   <article class="faq-item"><h3>How do I request a quote?</h3><p>Use the Contact page to share your location, date, service and project requirements.</p></article>
+   <article class="faq-item"><h3>Can I request a customised shoot?</h3><p>Yes. Share your goals and we can discuss a shoot plan suited to your project.</p></article>
+   <article class="faq-item"><h3>Are drone shoots subject to conditions?</h3><p>Yes. Every shoot depends on weather, site permission and applicable drone regulations.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container"><div class="cta-band"><div><h2>Ready To Capture Your Story From The Sky?</h2><p>Tell us about your next project and request a customised quote.</p></div><a class="btn btn-primary" href="contact.html">Contact Orbit Eyee ↗</a></div></div>
+</section>
+</main>
+
+<section class="contact-strip"><div class="container contact-strip-inner">
+ <div><span class="eyebrow">Let's create something extraordinary</span><h2>Ready to Elevate Your Perspective?</h2><p>Get in touch with us for bookings, quotes or any enquiries.</p>
+  <div class="contact-details"><span>+91 72176 76818</span><span>Chat on WhatsApp</span><span>ashish.khokhar.kumar55@gmail.com</span></div>
+ </div>
+ <form class="quick-form" action="https://formsubmit.co/ashish.khokhar.kumar55@gmail.com" method="POST">
+  <label>Your Name *<input name="name" placeholder="Enter your name" required></label>
+  <label>Your Email *<input type="email" name="email" placeholder="Enter your email" required></label>
+  <label class="full">Your Message *<textarea name="message" placeholder="Tell us about your project..." required></textarea></label>
+  <input type="hidden" name="_subject" value="New Orbit Eyee website enquiry">
+  <button type="submit">Send Enquiry →</button>
+ </form>
+</div></section>
+<footer>
+ <div class="container">
+  <div class="footer-top">
+   <div class="footer-brand"><a class="logo" href="index.html" aria-label="Orbit Eyee home"><span class="footer-drone-mark" aria-hidden="true">✈</span> ORBIT <span>EYEE</span></a><p>SEEING FURTHER. LASTING IMPRESSIONS.</p><div class="footer-contact"><a href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a><a href="tel:+917217676818">+91 72176 76818</a></div></div>
+   <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services⌄</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="career.html">Career</a></nav>
+   <div class="footer-social" aria-label="Social media">
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.2H7.7V13h2.7v8z" fill="currentColor"/></svg></a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.7" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7.1a2.8 2.8 0 0 0-2-2C18.2 4.6 12 4.6 12 4.6s-6.2 0-8 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.5 12 29 29 0 0 0 2 16.9a2.8 2.8 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.9 29 29 0 0 0-.5-4.9ZM9.8 15.4V8.6l5.9 3.4z" fill="currentColor"/></svg></a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM3.7 10h3v10h-3zm5 0h2.9v1.4h.1a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.6V20h-3v-5c0-1.2 0-2.7-1.7-2.7s-2 1.3-2 2.6V20h-3z" fill="currentColor"/></svg></a>
+   </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Orbit Eyee. All rights reserved.</span><span class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div>
+ </div>
+</footer>
+<a href="https://wa.me/?text=Hello%20Orbit%20Eyee%2C%20I%20would%20like%20to%20enquire%20about%20a%20drone%20shoot." target="_blank" rel="noopener" class="whatsapp-button" aria-label="Message Orbit Eyee on WhatsApp"><span style="font-size:29px;color:white">◉</span></a>
+<script>
+(() => {
+ const toggle = document.querySelector('.menu-toggle');
+ const links = document.getElementById('nav-links');
+ if (toggle && links) {
+  toggle.addEventListener('click', () => {
+   const opened = links.classList.toggle('show');
+   toggle.setAttribute('aria-expanded', String(opened));
+   toggle.textContent = opened ? '×' : '☰';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+   links.classList.remove('show');
+   toggle.setAttribute('aria-expanded', 'false');
+   toggle.textContent = '☰';
+  }));
+ }
+})();
+</script>
+</body>
+</html>
