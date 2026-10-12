@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,36 +10,86 @@
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="stylesheet" href="Style.css">
 <style>
-/* Homepage-specific refinements */
-.hero{background-image:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.83) 37%,rgba(255,255,255,.06) 76%),url('https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=2200&q=85');background-position:center 48%;min-height:590px}
-.hero h1,.hero p{color:#101820}
-.hero p{max-width:590px}
-.hero .eyebrow{color:#003366}
-.hero .eyebrow:before{background:#FFD500}
-.hero .btn-outline{border-color:#003366;color:#003366;background:rgba(255,255,255,.72)}
-.hero .btn-outline:hover{background:#fff}
-.home-services .card{padding:0;overflow:hidden}
-.service-photo{height:205px;width:100%;object-fit:cover}
-.service-card-body{padding:24px}
-.service-card-body .icon-box{margin-bottom:14px}
-.photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.photo-tile{border-radius:15px;overflow:hidden;position:relative;min-height:190px;background:#e8edf3}
-.photo-tile img{width:100%;height:220px;object-fit:cover;transition:transform .4s}
-.photo-tile:hover img{transform:scale(1.05)}
-.photo-tile span{position:absolute;left:0;right:0;bottom:0;padding:28px 15px 14px;color:white;font-weight:800;background:linear-gradient(transparent,rgba(0,20,40,.8))}
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}
-.stat{border:1px solid #dce4ee;border-radius:14px;padding:20px;text-align:center;background:#fff}
-.stat strong{display:block;font:800 1.8rem Manrope,sans-serif;color:#003366}
-.stat span{font-size:.9rem;color:#5d6672}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.faq-item{border:1px solid #e2e7ee;border-radius:14px;padding:22px;background:#fff}
-.faq-item h3{margin-bottom:9px}
-.faq-item p{color:#5d6672;margin:0}
-.testimonial{max-width:850px;margin:auto;border-left:4px solid #FFD500;padding:26px 30px;background:#fff;border-radius:0 16px 16px 0;box-shadow:0 10px 28px rgba(0,35,75,.06)}
-.testimonial blockquote{margin:0 0 14px;font-size:1.1rem;color:#252c35}
-.testimonial cite{font-style:normal;font-weight:800;color:#003366}
-@media(max-width:900px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{background-position:60% center}.stats-strip{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.hero{background-image:linear-gradient(90deg,rgba(255,255,255,.93),rgba(255,255,255,.72)),url('https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=1000&q=80');min-height:520px}.service-photo{height:190px}.photo-grid,.faq-grid{grid-template-columns:1fr}.photo-tile img{height:220px}.stats-strip{grid-template-columns:repeat(2,1fr)}}
+:root{--navy:#062f5e;--yellow:#ffd000;--ink:#101827;--muted:#45556b}
+body{font-size:14px;line-height:1.45;color:var(--ink)}
+.container{width:min(820px,84%);margin-inline:auto}
+.site-header{position:relative;background:#062f5e;box-shadow:none;border-bottom:1px solid rgba(255,255,255,.2)}
+.header-inner{min-height:54px;gap:18px}
+.logo{font-size:1.2rem;line-height:1;letter-spacing:-.04em}
+.logo:before{content:"◉";display:inline-grid;place-items:center;width:28px;height:28px;border:3px solid var(--yellow);border-radius:50%;margin-right:5px;color:var(--yellow);font-size:17px}
+nav ul{gap:2px}nav a{font-size:11px;padding:8px 10px;border-radius:0}
+nav a:hover,nav a.active{background:none;color:var(--yellow);box-shadow:inset 0 -2px var(--yellow)}
+.header-book{font-size:10px;padding:8px 16px;white-space:nowrap}
+.hero{min-height:285px;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.72) 34%,rgba(255,255,255,.03) 70%),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90') center 55%/cover no-repeat;color:var(--ink)}
+.hero:after{display:none}.hero-inner{padding:36px 0 40px;max-width:none}
+.hero .eyebrow{font-size:10px;letter-spacing:.09em;color:#0b2b50;margin-bottom:5px}
+.hero .eyebrow:before{display:none}.hero h1{font-size:clamp(2rem,3.3vw,2.55rem);line-height:1.08;letter-spacing:-.035em;max-width:380px;margin:0 0 8px;color:#111827}
+.hero p{font-size:12px;line-height:1.5;color:#172033;max-width:390px;margin:0 0 20px}
+.hero-actions{gap:10px}.hero .btn{font-size:10px;padding:9px 18px}
+.hero .btn-outline{background:#fff;border-color:#aab5c4;color:#10213b}
+section.section{padding:23px 0}
+.section-head{max-width:none;text-align:left;margin:0 0 15px}
+.section-head .eyebrow{font-size:8px;color:#17375f;letter-spacing:.06em;margin-bottom:3px}
+.section-head .eyebrow:before{width:27px;background:var(--yellow)}
+.section-head h2{font-size:21px;letter-spacing:-.025em;margin:0 0 3px}
+.section-head p{font-size:10px;margin:0;color:#40506a}
+.home-services .section-head{position:relative;padding-right:100px}
+.home-services .section-head:after{content:"View All Services  →";position:absolute;right:0;top:18px;color:#102a4a;font-size:9px;font-weight:700}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.home-services .card{padding:0;border-radius:7px;box-shadow:0 2px 9px rgba(0,35,75,.04);border-color:#e7ebf1}
+.service-photo{height:105px;object-fit:cover}
+.service-card-body{padding:0 12px 10px;position:relative}
+.service-card-body .icon-box{width:32px;height:32px;border-radius:50%;margin-top:-17px;margin-bottom:7px;position:relative;border:1px solid #ffe45d;background:var(--yellow);font-size:15px}
+.service-card-body h3{font-size:12px;margin-bottom:5px}
+.service-card-body p{font-size:10px;line-height:1.4;margin-bottom:6px;color:#435168}
+.card-link{font-size:9px}
+.section-soft{background:#f4f6f9}
+.section-soft .section-head{margin-bottom:14px}
+.feature-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.feature{border:0;box-shadow:none;background:transparent;border-radius:0;text-align:center;padding:12px 3px 0}
+.feature h3{font-size:10px;margin:0 0 4px}.feature p{font-size:9px;line-height:1.35}
+.stats-strip{display:none}
+#why .feature{padding-top:10px}
+.why-layout{display:grid;grid-template-columns:1.2fr .8fr;align-items:stretch;gap:18px}
+.why-visual{min-height:175px;background:linear-gradient(90deg,rgba(0,44,82,.05),rgba(0,44,82,.02)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=85') center/cover;border-left:8px solid var(--yellow);display:flex;align-items:end;padding:18px;color:white;font-weight:800;font-size:17px;text-shadow:0 2px 8px #001a33}
+.why-visual span{display:block;color:var(--yellow);font-style:italic}
+.process-section .section-head{margin-bottom:10px}
+.process-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.process-step{display:flex;gap:9px;align-items:flex-start}
+.process-step b{flex:none;width:29px;height:29px;display:grid;place-items:center;background:var(--yellow);border-radius:50%;font-size:10px}
+.process-step h3{font-size:9px;margin:4px 0 5px}.process-step p{font-size:8px;line-height:1.35;color:#4b5870;margin:0}
+.process-row .btn{font-size:9px;padding:8px 12px}
+.contact-strip{background:linear-gradient(90deg,rgba(255,225,189,.88),rgba(255,255,255,.64)),url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85') center/cover;padding:18px 0}
+.contact-strip-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}
+.contact-strip h2{font-size:17px;margin:2px 0 4px}.contact-strip p{font-size:10px;margin-bottom:9px}
+.contact-details{display:flex;gap:12px;flex-wrap:wrap;font-size:9px;font-weight:700}
+.contact-details span:before{content:"●";color:#d6a900;margin-right:5px}
+.quick-form{background:rgba(255,255,255,.95);border:1px solid #dce2eb;border-radius:5px;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.quick-form label{font-size:8px;font-weight:700;color:#29374c}
+.quick-form input,.quick-form textarea{width:100%;border:1px solid #d8e0e9;border-radius:4px;padding:7px;font:9px Arial;margin-top:3px}
+.quick-form .full{grid-column:1/-1}.quick-form textarea{height:35px;resize:vertical}
+.quick-form button{grid-column:1/-1;border:0;border-radius:4px;background:var(--yellow);padding:8px;font-size:9px;font-weight:800;cursor:pointer}
+footer{background:#062f5e;padding:14px 0 8px}
+.footer-top{grid-template-columns:1.3fr 1fr 1fr;gap:20px;padding-bottom:10px}
+footer .logo{font-size:1rem;margin-bottom:5px}footer p{font-size:8px;margin-bottom:3px}
+.footer-heading{font-size:9px;margin-bottom:5px}.footer-links{gap:3px}.footer-links a{font-size:8px}
+.footer-bottom{padding-top:8px;font-size:8px}
+.whatsapp-button{width:38px;height:38px;right:14px;bottom:14px}
+@media(max-width:700px){
+ .container{width:min(92%,560px)}.header-inner{min-height:58px;flex-wrap:wrap;gap:8px;padding:8px 0}
+ .logo{font-size:1.1rem}.menu-toggle{display:block;margin-left:auto}
+ nav{order:3;width:100%}nav ul{display:none;flex-direction:column;align-items:stretch;background:#062f5e;padding:8px 0}
+ nav ul.show{display:flex}nav a{padding:9px 12px}.header-book{padding:8px 12px}
+ .hero{min-height:340px;background-position:60% center}.hero-inner{padding:32px 0}
+ .hero h1{font-size:2.1rem;max-width:320px}.hero p{max-width:310px}
+ .grid{grid-template-columns:1fr;gap:12px}.service-photo{height:160px}
+ .service-card-body{padding:0 14px 13px}.service-card-body h3{font-size:14px}.service-card-body p{font-size:11px}
+ .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.why-layout{grid-template-columns:1fr}
+ .why-visual{min-height:150px}.process-row{grid-template-columns:1fr 1fr;gap:15px}
+ .contact-strip-inner{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}.footer-top>div:first-child{grid-column:1/-1}
+ .home-services .section-head{padding-right:0}.home-services .section-head:after{position:static;display:block;margin-top:8px}
+}
+@media(max-width:390px){.process-row{grid-template-columns:1fr}.hero-actions .btn{padding:9px 12px}.footer-top{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -64,18 +115,18 @@
 <section class="hero">
  <div class="container hero-inner">
   <span class="eyebrow">Professional drone services</span>
-  <h1>Stunning Aerial Views<br>for Your Special Moments</h1>
-  <p>Premium drone photography and cinematic aerial videography for real estate, weddings, events and businesses. Capture a fresh perspective with Orbit Eye.</p>
+  <h1>Capture More<br>Than Just Photos</h1>
+  <p>Stunning aerial photography &amp; videography for<br class="desktop-break"> Real Estate, Weddings, Events and Corporate shoots.</p>
   <div class="hero-actions">
-   <a class="btn btn-primary" href="contact.html">Book Your Shoot ↗</a>
-   <a class="btn btn-outline" href="gallery.html">Explore Our Work</a>
+   <a class="btn btn-primary" href="contact.html">Book Now&nbsp; →</a>
+   <a class="btn btn-outline" href="https://wa.me/?text=Hello%20Orbit%20Eye%2C%20I%20would%20like%20to%20book%20a%20drone%20shoot." target="_blank" rel="noopener">☏ Chat on WhatsApp</a>
   </div>
  </div>
 </section>
 
 <section class="section home-services">
  <div class="container">
-  <div class="section-head"><span class="eyebrow">What we do</span><h2>Professional Drone Services</h2><p>Creative aerial solutions for properties, celebrations and businesses.</p></div>
+  <div class="section-head"><span class="eyebrow">What we do</span><h2>Specialised Drone Solutions</h2><p>We bring your vision to life with stunning aerial perspectives and cinematic quality.</p></div>
   <div class="grid">
    <article class="card">
     <img class="service-photo" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Modern luxury home and landscaped property" loading="lazy">
@@ -89,39 +140,32 @@
     <img class="service-photo" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85" alt="Live event with stage lighting and audience" loading="lazy">
     <div class="service-card-body"><div class="icon-box">◈</div><h3>Events &amp; Celebrations</h3><p>Professional aerial coverage for family functions, parties, concerts and special occasions.</p><a class="card-link" href="services.html">Learn More →</a></div>
    </article>
-   <article class="card">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Modern commercial towers in a city" loading="lazy">
-    <div class="service-card-body"><div class="icon-box">▥</div><h3>Corporate &amp; Brand Shoots</h3><p>Build a stronger brand story with aerial footage for campaigns, resorts and commercial projects.</p><a class="card-link" href="services.html">Learn More →</a></div>
-   </article>
   </div>
  </div>
 </section>
 
-<section class="section section-soft">
- <div class="container">
-  <div class="section-head"><span class="eyebrow">The Orbit Eye difference</span><h2>Your Vision. Our Flight.</h2><p>We combine creative expertise with professional planning to deliver aerial visuals that make an impact.</p></div>
-  <div class="feature-grid">
-   <div class="feature"><h3>4K Quality</h3><p>High-resolution aerial photography and cinematic video.</p></div>
-   <div class="feature"><h3>Creative Vision</h3><p>Distinctive angles and thoughtful visual storytelling.</p></div>
-   <div class="feature"><h3>Professional Service</h3><p>Support from initial planning through final delivery.</p></div>
+<section class="section section-soft" id="why">
+ <div class="container why-layout">
+  <div><div class="section-head"><span class="eyebrow">Why choose us?</span><h2>Why Choose Orbit Eye?</h2><p>Professional. Reliable. Creative.</p></div>
+   <div class="feature-grid">
+    <div class="feature"><h3>◉</h3><p>High-Quality<br>4K Footage</p></div>
+    <div class="feature"><h3>♢</h3><p>Experienced<br>Drone Pilots</p></div>
+    <div class="feature"><h3>⚙</h3><p>Latest Drone<br>Technology</p></div>
+    <div class="feature"><h3>◷</h3><p>On-Time<br>Delivery</p></div>
+    <div class="feature"><h3>☆</h3><p>Customised<br>Packages</p></div>
+   </div>
   </div>
-  <div class="stats-strip">
-   <div class="stat"><strong>01</strong><span>Personalised planning</span></div>
-   <div class="stat"><strong>4K</strong><span>High-quality visuals</span></div>
-   <div class="stat"><strong>360°</strong><span>Fresh perspectives</span></div>
-   <div class="stat"><strong>End-to-end</strong><span>Project support</span></div>
-  </div>
+  <div class="why-visual">Your Vision<br><span>Our Flight</span></div>
  </div>
 </section>
 
-<section class="section">
- <div class="container">
-  <div class="section-head"><span class="eyebrow">Simple and clear</span><h2>How It Works</h2><p>From your first enquiry to the final footage, we keep the process straightforward.</p></div>
-  <div class="feature-grid">
-   <div class="feature"><span class="process-number">01</span><h3>Share Your Requirements</h3><p>Tell us about your project, location and preferred date.</p></div>
-   <div class="feature"><span class="process-number">02</span><h3>Plan Your Shoot</h3><p>We discuss the brief, logistics and suitable coverage.</p></div>
-   <div class="feature"><span class="process-number">03</span><h3>We Capture</h3><p>Our planned shoot captures aerial footage and photos.</p></div>
-   <div class="feature"><span class="process-number">04</span><h3>Receive Your Content</h3><p>Get the agreed edited visuals ready for your use.</p></div>
+<section class="section process-section">
+ <div class="container"><div class="section-head"><span class="eyebrow">How it works</span><h2>Our Process</h2><p>Simple steps to get your perfect aerial shots.</p></div>
+  <div class="process-row">
+   <div class="process-step"><b>01</b><div><h3>Share Your Requirements</h3><p>Tell us about your project and vision.</p></div></div>
+   <div class="process-step"><b>02</b><div><h3>Get a Custom Quote</h3><p>We'll share the best package for your needs.</p></div></div>
+   <div class="process-step"><b>03</b><div><h3>Schedule the Shoot</h3><p>Choose a date and time that works for you.</p></div></div>
+   <div class="process-step"><b>04</b><div><h3>Receive Your Content</h3><p>Get high-quality photos and videos, ready to use.</p></div></div>
   </div>
  </div>
 </section>
@@ -163,6 +207,18 @@
 </section>
 </main>
 
+<section class="contact-strip"><div class="container contact-strip-inner">
+ <div><span class="eyebrow">Let's create something extraordinary</span><h2>Ready to Elevate Your Perspective?</h2><p>Get in touch with us for bookings, quotes or any enquiries.</p>
+  <div class="contact-details"><span>+91 98765 43210</span><span>Chat on WhatsApp</span><span>info@orbiteye.in</span></div>
+ </div>
+ <form class="quick-form" action="https://formsubmit.co/info@orbiteye.in" method="POST">
+  <label>Your Name *<input name="name" placeholder="Enter your name" required></label>
+  <label>Your Email *<input type="email" name="email" placeholder="Enter your email" required></label>
+  <label class="full">Your Message *<textarea name="message" placeholder="Tell us about your project..." required></textarea></label>
+  <input type="hidden" name="_subject" value="New Orbit Eye website enquiry">
+  <button type="submit">Send Enquiry →</button>
+ </form>
+</div></section>
 <footer>
  <div class="container">
   <div class="footer-top">
