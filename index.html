@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbit Eye | Premium Drone Photography &amp; Aerial Videography</title>
+<meta name="description" content="Orbit Eye provides professional drone photography and cinematic aerial videography for real estate, weddings, events and businesses.">
+<meta name="theme-color" content="#003366">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="Style.css">
+<style>
+/* Homepage-specific refinements */
+.hero{background-image:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.83) 37%,rgba(255,255,255,.06) 76%),url('https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=2200&q=85');background-position:center 48%;min-height:590px}
+.hero h1,.hero p{color:#101820}
+.hero p{max-width:590px}
+.hero .eyebrow{color:#003366}
+.hero .eyebrow:before{background:#FFD500}
+.hero .btn-outline{border-color:#003366;color:#003366;background:rgba(255,255,255,.72)}
+.hero .btn-outline:hover{background:#fff}
+.home-services .card{padding:0;overflow:hidden}
+.service-photo{height:205px;width:100%;object-fit:cover}
+.service-card-body{padding:24px}
+.service-card-body .icon-box{margin-bottom:14px}
+.photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.photo-tile{border-radius:15px;overflow:hidden;position:relative;min-height:190px;background:#e8edf3}
+.photo-tile img{width:100%;height:220px;object-fit:cover;transition:transform .4s}
+.photo-tile:hover img{transform:scale(1.05)}
+.photo-tile span{position:absolute;left:0;right:0;bottom:0;padding:28px 15px 14px;color:white;font-weight:800;background:linear-gradient(transparent,rgba(0,20,40,.8))}
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}
+.stat{border:1px solid #dce4ee;border-radius:14px;padding:20px;text-align:center;background:#fff}
+.stat strong{display:block;font:800 1.8rem Manrope,sans-serif;color:#003366}
+.stat span{font-size:.9rem;color:#5d6672}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.faq-item{border:1px solid #e2e7ee;border-radius:14px;padding:22px;background:#fff}
+.faq-item h3{margin-bottom:9px}
+.faq-item p{color:#5d6672;margin:0}
+.testimonial{max-width:850px;margin:auto;border-left:4px solid #FFD500;padding:26px 30px;background:#fff;border-radius:0 16px 16px 0;box-shadow:0 10px 28px rgba(0,35,75,.06)}
+.testimonial blockquote{margin:0 0 14px;font-size:1.1rem;color:#252c35}
+.testimonial cite{font-style:normal;font-weight:800;color:#003366}
+@media(max-width:900px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{background-position:60% center}.stats-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.hero{background-image:linear-gradient(90deg,rgba(255,255,255,.93),rgba(255,255,255,.72)),url('https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&w=1000&q=80');min-height:520px}.service-photo{height:190px}.photo-grid,.faq-grid{grid-template-columns:1fr}.photo-tile img{height:220px}.stats-strip{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Orbit Eye home">Orbit <span>Eye</span></a>
+    <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="career.html">Career</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary header-book" href="contact.html">Book Now <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-inner">
+  <span class="eyebrow">Professional drone services</span>
+  <h1>Stunning Aerial Views<br>for Your Special Moments</h1>
+  <p>Premium drone photography and cinematic aerial videography for real estate, weddings, events and businesses. Capture a fresh perspective with Orbit Eye.</p>
+  <div class="hero-actions">
+   <a class="btn btn-primary" href="contact.html">Book Your Shoot ↗</a>
+   <a class="btn btn-outline" href="gallery.html">Explore Our Work</a>
+  </div>
+ </div>
+</section>
+
+<section class="section home-services">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">What we do</span><h2>Professional Drone Services</h2><p>Creative aerial solutions for properties, celebrations and businesses.</p></div>
+  <div class="grid">
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Modern luxury home and landscaped property" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">⌂</div><h3>Real Estate Drone Photography</h3><p>Showcase luxury properties, villas, apartments and commercial spaces with compelling aerial visuals.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Elegant wedding ceremony setup" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">✦</div><h3>Wedding Drone Cinematography</h3><p>Capture venue views, grand entrances and unforgettable celebrations from a cinematic perspective.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85" alt="Live event with stage lighting and audience" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">◈</div><h3>Events &amp; Celebrations</h3><p>Professional aerial coverage for family functions, parties, concerts and special occasions.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+   <article class="card">
+    <img class="service-photo" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Modern commercial towers in a city" loading="lazy">
+    <div class="service-card-body"><div class="icon-box">▥</div><h3>Corporate &amp; Brand Shoots</h3><p>Build a stronger brand story with aerial footage for campaigns, resorts and commercial projects.</p><a class="card-link" href="services.html">Learn More →</a></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section section-soft">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">The Orbit Eye difference</span><h2>Your Vision. Our Flight.</h2><p>We combine creative expertise with professional planning to deliver aerial visuals that make an impact.</p></div>
+  <div class="feature-grid">
+   <div class="feature"><h3>4K Quality</h3><p>High-resolution aerial photography and cinematic video.</p></div>
+   <div class="feature"><h3>Creative Vision</h3><p>Distinctive angles and thoughtful visual storytelling.</p></div>
+   <div class="feature"><h3>Professional Service</h3><p>Support from initial planning through final delivery.</p></div>
+  </div>
+  <div class="stats-strip">
+   <div class="stat"><strong>01</strong><span>Personalised planning</span></div>
+   <div class="stat"><strong>4K</strong><span>High-quality visuals</span></div>
+   <div class="stat"><strong>360°</strong><span>Fresh perspectives</span></div>
+   <div class="stat"><strong>End-to-end</strong><span>Project support</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Simple and clear</span><h2>How It Works</h2><p>From your first enquiry to the final footage, we keep the process straightforward.</p></div>
+  <div class="feature-grid">
+   <div class="feature"><span class="process-number">01</span><h3>Share Your Requirements</h3><p>Tell us about your project, location and preferred date.</p></div>
+   <div class="feature"><span class="process-number">02</span><h3>Plan Your Shoot</h3><p>We discuss the brief, logistics and suitable coverage.</p></div>
+   <div class="feature"><span class="process-number">03</span><h3>We Capture</h3><p>Our planned shoot captures aerial footage and photos.</p></div>
+   <div class="feature"><span class="process-number">04</span><h3>Receive Your Content</h3><p>Get the agreed edited visuals ready for your use.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section section-soft">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">A glimpse of our work</span><h2>Explore Our Aerial Creations</h2><p>Visual inspiration across property, celebrations, events and cityscapes.</p></div>
+  <div class="photo-grid">
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85" alt="Contemporary luxury property" loading="lazy"><span>Real Estate</span></a>
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=85" alt="Wedding reception decorations" loading="lazy"><span>Weddings</span></a>
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=85" alt="Crowd at a live music event" loading="lazy"><span>Events</span></a>
+   <a class="photo-tile" href="gallery.html"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=85" alt="City skyline at dusk" loading="lazy"><span>Corporate &amp; Cityscapes</span></a>
+  </div>
+  <div class="text-center mt-24"><a class="btn btn-navy" href="gallery.html">View Full Gallery ↗</a></div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Why clients choose us</span><h2>Thoughtful Planning. Memorable Results.</h2></div>
+  <div class="testimonial"><blockquote>“Every project deserves a perspective that makes it stand out. Orbit Eye brings creative thinking, clear communication and careful planning to aerial visual storytelling.”</blockquote><cite>Orbit Eye — Our service promise</cite></div>
+ </div>
+</section>
+
+<section class="section section-soft">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">Frequently asked questions</span><h2>Before You Book</h2></div>
+  <div class="faq-grid">
+   <article class="faq-item"><h3>What types of projects do you cover?</h3><p>Real estate, weddings, private celebrations, events, corporate projects and promotional content.</p></article>
+   <article class="faq-item"><h3>How do I request a quote?</h3><p>Use the Contact page to share your location, date, service and project requirements.</p></article>
+   <article class="faq-item"><h3>Can I request a customised shoot?</h3><p>Yes. Share your goals and we can discuss a shoot plan suited to your project.</p></article>
+   <article class="faq-item"><h3>Are drone shoots subject to conditions?</h3><p>Yes. Every shoot depends on weather, site permission and applicable drone regulations.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container"><div class="cta-band"><div><h2>Ready To Capture Your Story From The Sky?</h2><p>Tell us about your next project and request a customised quote.</p></div><a class="btn btn-primary" href="contact.html">Contact Orbit Eye ↗</a></div></div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-top">
+   <div><a class="logo" href="index.html">Orbit <span>Eye</span></a><p>Premium Drone Photography &amp; Aerial Videography Services.</p><p>Real estate · Weddings · Events · Corporate</p></div>
+   <div><h3 class="footer-heading">Explore</h3><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a></div></div>
+   <div><h3 class="footer-heading">Start a project</h3><div class="footer-links"><a href="contact.html">Book a Shoot / Get a Quote</a><a href="career.html">Careers at Orbit Eye</a><a href="https://wa.me/?text=Hello%20Orbit%20Eye%2C%20I%20would%20like%20to%20enquire%20about%20a%20drone%20shoot." target="_blank" rel="noopener">Message us on WhatsApp ↗</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Orbit Eye. All Rights Reserved.</span><span>See the world from above.</span></div>
+ </div>
+</footer>
+<a href="https://wa.me/?text=Hello%20Orbit%20Eye%2C%20I%20would%20like%20to%20enquire%20about%20a%20drone%20shoot." target="_blank" rel="noopener" class="whatsapp-button" aria-label="Message Orbit Eye on WhatsApp"><span style="font-size:29px;color:white">◉</span></a>
+<script>
+(() => {
+ const toggle = document.querySelector('.menu-toggle');
+ const links = document.getElementById('nav-links');
+ if (toggle && links) {
+  toggle.addEventListener('click', () => {
+   const opened = links.classList.toggle('show');
+   toggle.setAttribute('aria-expanded', String(opened));
+   toggle.textContent = opened ? '×' : '☰';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+   links.classList.remove('show');
+   toggle.setAttribute('aria-expanded', 'false');
+   toggle.textContent = '☰';
+  }));
+ }
+})();
+</script>
+</body>
+</html>

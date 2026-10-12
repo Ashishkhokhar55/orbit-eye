@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Orbit Eye</title>
+<meta name="description" content="Professional drone photography and aerial videography services for real estate, weddings, events and businesses.">
+<meta name="theme-color" content="#003366">
+<link rel="stylesheet" href="Style.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Orbit Eye home">Orbit <span>Eye</span></a>
+    <nav aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="about.html" >About</a></li>
+        <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+        <li><a href="gallery.html" >Gallery</a></li>
+        <li><a href="contact.html" >Contact</a></li>
+        <li><a href="career.html" >Career</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary header-book" href="contact.html">Book Now <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero page-hero"><div class="container hero-inner"><span class="eyebrow">Our capabilities</span><h1>Our Services</h1><p>Premium aerial photography and cinematic drone solutions.</p></div></section>
+<section class="section"><div class="container intro-copy"><span class="eyebrow">Aerial solutions designed for impact</span><h2>Make your story stand out</h2><p>At Orbit Eye, we create professional aerial content that helps properties, brands and special moments stand out. Our drone solutions combine technology, creativity and cinematic storytelling to deliver powerful visual experiences.</p></div></section>
+<div class="container">
+<section class="service-detail"><div class="service-image"><img src="images/real-estate.jpg" alt="Aerial view for real estate marketing" loading="lazy"></div><div class="service-content"><span class="tag">01 · Property</span><h2>Real Estate Aerial Photography</h2><p>Give your property a premium presentation with cinematic aerial views. We help builders, developers and real estate professionals showcase villas, apartments, resorts and commercial projects from a unique perspective.</p><ul><li>Luxury property aerial shots</li><li>Cinematic walkthrough videos</li><li>Professional marketing visuals</li><li>Exterior &amp; location showcase</li></ul><a href="contact.html" class="btn btn-primary">Book Real Estate Shoot ↗</a></div></section>
+<section class="service-detail reverse"><div class="service-image"><img src="images/wedding.jpg" alt="Aerial wedding venue cinematography" loading="lazy"></div><div class="service-content"><span class="tag">02 · Celebrations</span><h2>Wedding Drone Cinematography</h2><p>Your special moments deserve a grand perspective. Orbit Eye captures weddings with cinematic aerial shots that add emotion and luxury to your wedding film.</p><ul><li>Venue aerial coverage</li><li>Grand entry shots</li><li>Cinematic wedding visuals</li><li>Beautiful memory creation</li></ul><a href="contact.html" class="btn btn-primary">Book Wedding Shoot ↗</a></div></section>
+<section class="service-detail"><div class="service-image"><img src="images/event.jpg" alt="Drone coverage for events and corporate projects" loading="lazy"></div><div class="service-content"><span class="tag">03 · Brands &amp; events</span><h2>Events &amp; Corporate Coverage</h2><p>From corporate events to outdoor celebrations, we provide professional drone coverage to capture the complete atmosphere and scale of your event.</p><ul><li>Corporate videos</li><li>Event highlights</li><li>Brand promotions</li><li>Large venue coverage</li></ul><a href="contact.html" class="btn btn-primary">Get A Quote ↗</a></div></section>
+</div>
+<section class="section section-soft"><div class="container"><div class="section-head"><span class="eyebrow">Simple and clear</span><h2>Our Simple Process</h2></div><div class="feature-grid"><div class="feature"><span class="process-number">01</span><h3>Consultation</h3><p>Understand your requirement and plan the shoot.</p></div><div class="feature"><span class="process-number">02</span><h3>Production</h3><p>Capture professional aerial footage.</p></div><div class="feature"><span class="process-number">03</span><h3>Delivery</h3><p>Provide edited cinematic final output.</p></div></div></div></section>
+<section class="section"><div class="container"><div class="cta-band"><div><h2>Ready For Your Aerial Experience?</h2><p>Contact Orbit Eye for your next drone project.</p></div><a class="btn btn-primary" href="contact.html">Contact Us ↗</a></div></div></section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div><a class="logo" href="index.html">Orbit <span>Eye</span></a><p>Premium Drone Photography &amp; Aerial Videography Services</p></div>
+      <div><h3 class="footer-heading">Explore</h3><div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a>
+      </div></div>
+      <div><h3 class="footer-heading">Get in touch</h3><div class="footer-links">
+        <a href="contact.html">Contact Orbit Eye</a><a href="career.html">Careers</a><a href="tel:+917217676818">+91-7217676818</a><a href="mailto:ashish.khokhar.kumar55@gmail.com">ashish.khokhar.kumar55@gmail.com</a>
+      </div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Orbit Eye. All Rights Reserved.</span><span>See the world from above.</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/917217676818" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Chat with Orbit Eye on WhatsApp"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt=""></a>
+<script>
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.getElementById('nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const opened = links.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', String(opened));
+      toggle.textContent = opened ? '×' : '☰';
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+  }
+})();
+</script>
+
+</body>
+</html>
